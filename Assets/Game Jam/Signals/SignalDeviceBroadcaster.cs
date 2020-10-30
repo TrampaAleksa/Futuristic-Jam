@@ -6,13 +6,19 @@ public class SignalDeviceBroadcaster : MonoBehaviour
     {
         foreach (var broadcastReceiver in broadcaster.info.broadcastReceivers)
         {
-            broadcaster.info.line.SetPosition(0, broadcaster.transform.position);
-            broadcaster.info.line.SetPosition(1, broadcastReceiver.transform.position);
+            var receiverPosition = broadcastReceiver.transform.position;
+            var broadcasterPosition = broadcaster.transform.position;
+            
+            if (Physics.Linecast(broadcasterPosition, receiverPosition, LayerMask.GetMask("Wall")))
+            {
+                Debug.Log("blocked");
+            }
+            
+            broadcaster.info.line.SetPosition(0, broadcasterPosition);
+            broadcaster.info.line.SetPosition(1, receiverPosition);
             
             broadcastReceiver.receiver.ReceiveSignal(broadcaster);
         }
         
-        
-
     }
 }

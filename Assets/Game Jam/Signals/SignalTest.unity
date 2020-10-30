@@ -169,6 +169,7 @@ GameObject:
   - component: {fileID: 381164103}
   - component: {fileID: 381164102}
   - component: {fileID: 381164101}
+  - component: {fileID: 381164106}
   m_Layer: 0
   m_Name: Device2
   m_TagString: Untagged
@@ -232,8 +233,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 381164103}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 381164106}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: ReceiverLineDraw
         m_Mode: 0
         m_Arguments:
@@ -247,8 +248,8 @@ MonoBehaviour:
   wallEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 381164103}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 381164106}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: WallLineDraw
         m_Mode: 0
         m_Arguments:
@@ -286,6 +287,18 @@ Transform:
   m_Father: {fileID: 427865703}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &381164106
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 381164100}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6844929213844bcea9f1f2b599717ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &427865702
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,6 +910,7 @@ GameObject:
   - component: {fileID: 1493468850}
   - component: {fileID: 1493468849}
   - component: {fileID: 1493468848}
+  - component: {fileID: 1493468853}
   m_Layer: 0
   m_Name: Device1
   m_TagString: Untagged
@@ -960,8 +974,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1493468850}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 1493468853}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: ReceiverLineDraw
         m_Mode: 0
         m_Arguments:
@@ -975,8 +989,8 @@ MonoBehaviour:
   wallEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1493468850}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 1493468853}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: WallLineDraw
         m_Mode: 0
         m_Arguments:
@@ -1014,6 +1028,18 @@ Transform:
   m_Father: {fileID: 427865703}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1493468853
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1493468847}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6844929213844bcea9f1f2b599717ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2001441271
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1145,7 @@ GameObject:
   - component: {fileID: 2079665021}
   - component: {fileID: 2079665020}
   - component: {fileID: 2079665019}
+  - component: {fileID: 2079665024}
   m_Layer: 0
   m_Name: Device3
   m_TagString: Untagged
@@ -1182,8 +1209,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2079665021}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 2079665024}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: ReceiverLineDraw
         m_Mode: 0
         m_Arguments:
@@ -1197,8 +1224,8 @@ MonoBehaviour:
   wallEvents:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2079665021}
-        m_TargetAssemblyTypeName: SignalDeviceBroadcaster, Assembly-CSharp
+      - m_Target: {fileID: 2079665024}
+        m_TargetAssemblyTypeName: SignalLineDrawer, Assembly-CSharp
         m_MethodName: WallLineDraw
         m_Mode: 0
         m_Arguments:
@@ -1236,3 +1263,15 @@ Transform:
   m_Father: {fileID: 427865703}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2079665024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2079665018}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6844929213844bcea9f1f2b599717ca6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

@@ -10,6 +10,8 @@ public class Signal
     [SerializeField]private float range;
 
     [NonSerialized] public SignalDevice broadcaster;
+    [NonSerialized] public RaycastHit hit;
+    
     private float distance;
     private float inRange;
 

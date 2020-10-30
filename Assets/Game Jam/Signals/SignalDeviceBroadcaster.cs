@@ -1,13 +1,26 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.Events;
 
 public class SignalDeviceBroadcaster : MonoBehaviour
 {
-    private RaycastHit hit;
+    public RaycastHit hit;
     public UnityEvent<SignalDevice, SignalDevice> hitEvents;
     public UnityEvent<SignalDevice, SignalDevice> wallEvents;
 
-    public virtual void SendBroadcast(SignalDevice broadcaster)
+    private SignalDevice broadcaster;
+
+    private void Awake()
+    {
+        broadcaster = GetComponent<SignalDevice>();
+    }
+
+    private void Update()
+    {
+        SendBroadcast();
+    }
+    
+    protected virtual void SendBroadcast()
     {
         foreach (var signal in broadcaster.info.signals)
         {
@@ -16,7 +29,6 @@ public class SignalDeviceBroadcaster : MonoBehaviour
             else
                 hitEvents?.Invoke(broadcaster, signal.receiver);
         }
-        
     }
     
     private bool SignalInterrupted(SignalDevice broadcaster, SignalDevice receiver)
@@ -26,24 +38,4 @@ public class SignalDeviceBroadcaster : MonoBehaviour
         
         return Physics.Linecast(broadcasterPosition, receiverPosition, out hit, LayerMask.GetMask("Wall"));
     }
-
-    public void WallLineDraw(SignalDevice broadcaster,SignalDevice receiver)
-    {
-        var broadcasterPosition = broadcaster.transform.position;
-        var hitPoint = broadcaster.broadcaster.hit.point;
-        
-        broadcaster.info.line.SetPosition(0, broadcasterPosition);
-        broadcaster.info.line.SetPosition(1, hitPoint);
-    }
-
-    public void ReceiverLineDraw(SignalDevice broadcaster, SignalDevice receiver)
-    {
-        var receiverPosition = receiver.transform.position;
-        var broadcasterPosition = broadcaster.transform.position;
-        
-        broadcaster.info.line.SetPosition(0, broadcasterPosition);
-        broadcaster.info.line.SetPosition(1, receiverPosition);
-    }
-    
 }
-

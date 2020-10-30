@@ -16,9 +16,4 @@ public class SignalDevice : MonoBehaviour
         receiver = GetComponent<SignalReceiver>();
     }
 
-    private void Update()
-    {
-        broadcaster.SendBroadcast(this);
-    }
-
 }

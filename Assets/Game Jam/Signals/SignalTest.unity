@@ -188,10 +188,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99001ce1af632d947bdb1024630d211b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  broadcastReceivers:
-  - {fileID: 2079665022}
-  range: 0
   line: {fileID: 1177566253}
+  signals:
+  - receiver: {fileID: 2079665022}
+    type: 1
+    range: 0
 --- !u!114 &381164102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -915,10 +916,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99001ce1af632d947bdb1024630d211b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  broadcastReceivers:
-  - {fileID: 381164104}
-  range: 0
   line: {fileID: 718729221}
+  signals:
+  - receiver: {fileID: 381164104}
+    type: 0
+    range: 3
 --- !u!114 &1493468849
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1136,10 +1138,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99001ce1af632d947bdb1024630d211b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  broadcastReceivers:
-  - {fileID: 1493468851}
-  range: 0
   line: {fileID: 538490231}
+  signals:
+  - receiver: {fileID: 1493468851}
+    type: 0
+    range: 5
 --- !u!114 &2079665020
 MonoBehaviour:
   m_ObjectHideFlags: 0

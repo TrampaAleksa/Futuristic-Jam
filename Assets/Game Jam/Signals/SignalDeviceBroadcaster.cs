@@ -3,19 +3,18 @@ using UnityEngine.Events;
 
 public class SignalDeviceBroadcaster : MonoBehaviour
 {
-
     private RaycastHit hit;
     public UnityEvent<SignalDevice, SignalDevice> hitEvents;
     public UnityEvent<SignalDevice, SignalDevice> wallEvents;
 
     public virtual void SendBroadcast(SignalDevice broadcaster)
     {
-        foreach (var broadcastReceiver in broadcaster.info.broadcastReceivers)
+        foreach (var signal in broadcaster.info.signals)
         {
-            if (SignalInterrupted(broadcaster, broadcastReceiver))
-                wallEvents?.Invoke(broadcaster, broadcastReceiver);
+            if (SignalInterrupted(broadcaster, signal.receiver))
+                wallEvents?.Invoke(broadcaster, signal.receiver);
             else
-                hitEvents?.Invoke(broadcaster, broadcastReceiver);
+                hitEvents?.Invoke(broadcaster, signal.receiver);
         }
         
     }

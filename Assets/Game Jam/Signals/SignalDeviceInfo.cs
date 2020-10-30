@@ -7,4 +7,5 @@ public class SignalDeviceInfo : MonoBehaviour
 {
     public List<SignalDevice> broadcastReceivers;
     public float range;
+    public LineRenderer line;
 }

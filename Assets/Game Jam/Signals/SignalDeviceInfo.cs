@@ -5,6 +5,6 @@ using UnityEngine;
 
 public class SignalDeviceInfo : MonoBehaviour
 {
-    public List<SignalDevice> signalReceivers;
+    public List<SignalDevice> broadcastReceivers;
     public float range;
 }

@@ -1,10 +1,11 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class SignalDevice : MonoBehaviour
 {
-    private SignalDeviceInfo info;
-    private SignalDeviceBroadcaster broadcaster;
-    private SignalReceiver receiver;
+    public  SignalDeviceInfo info;
+    [NonSerialized] public SignalDeviceBroadcaster broadcaster;
+    [NonSerialized] public SignalReceiver receiver;
 
     private void Awake()
     {
@@ -12,4 +13,10 @@ public class SignalDevice : MonoBehaviour
         broadcaster = GetComponent<SignalDeviceBroadcaster>();
         receiver = GetComponent<SignalReceiver>();
     }
+
+    private void Start()
+    {
+        broadcaster.SendBroadcast(this);
+    }
+
 }

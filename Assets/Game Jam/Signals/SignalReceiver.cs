@@ -2,8 +2,8 @@
 
 public class SignalReceiver : MonoBehaviour
 {
-    public virtual void ReceiveSignal(SignalDevice broadcaster, SignalDevice receiver = null)
+    public virtual void ReceiveSignal(Signal signal)
     {
-        print(gameObject.name + " received signal from " + broadcaster.name);
+        print(gameObject.name + " received signal from " + signal.broadcaster.name);
     }
 }

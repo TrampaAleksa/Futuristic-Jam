@@ -5,8 +5,8 @@ using UnityEngine.Events;
 public class SignalDeviceBroadcaster : MonoBehaviour
 {
     public RaycastHit hit;
-    public UnityEvent<SignalDevice, SignalDevice> hitEvents;
-    public UnityEvent<SignalDevice, SignalDevice> wallEvents;
+    public UnityEvent<Signal> hitEvents;
+    public UnityEvent<Signal> wallEvents;
 
     private SignalDevice broadcaster;
 
@@ -24,18 +24,18 @@ public class SignalDeviceBroadcaster : MonoBehaviour
     {
         foreach (var signal in broadcaster.info.signals)
         {
-            if (SignalInterrupted(broadcaster, signal.receiver))
-                wallEvents?.Invoke(broadcaster, signal.receiver);
+            if (SignalInterrupted(signal))
+                wallEvents?.Invoke(signal);
             else
-                hitEvents?.Invoke(broadcaster, signal.receiver);
+                hitEvents?.Invoke(signal);
         }
     }
     
-    private bool SignalInterrupted(SignalDevice broadcaster, SignalDevice receiver)
+    private bool SignalInterrupted(Signal signal)
     {
-        var receiverPosition = receiver.transform.position;
-        var broadcasterPosition = broadcaster.transform.position;
+        var receiverPosition = signal.receiver.transform.position;
+        var broadcasterPosition = signal.broadcaster.transform.position;
         
-        return Physics.Linecast(broadcasterPosition, receiverPosition, out hit, LayerMask.GetMask("Wall"));
+        return Physics.Linecast(broadcasterPosition, receiverPosition, out signal.hit, LayerMask.GetMask("Wall"));
     }
 }

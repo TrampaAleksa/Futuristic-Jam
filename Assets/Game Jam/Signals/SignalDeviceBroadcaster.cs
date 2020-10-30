@@ -22,7 +22,7 @@ public class SignalDeviceBroadcaster : MonoBehaviour
     
     protected virtual void SendBroadcast()
     {
-        foreach (var signal in broadcaster.info.signals)
+        foreach (var signal in broadcaster.signals)
         {
             if (SignalInterrupted(signal))
                 wallEvents?.Invoke(signal);

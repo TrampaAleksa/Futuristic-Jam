@@ -1,14 +1,25 @@
 ﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SignalDevice : MonoBehaviour
 {
-    public SignalDeviceInfo info;
+    public List<Signal> signals;
+    [NonSerialized] public LineRenderer line;
 
     private void Awake()
     {
-        info = GetComponent<SignalDeviceInfo>();
-        info.InitSignals();
+        InitSignals(this);
+        FindObjectOfType<SignalLineHolder>().InitLines(this);
+
+    }
+    
+    private void InitSignals(SignalDevice broadcaster)
+    {
+        foreach (var signal in signals)
+        {
+            signal.broadcaster = broadcaster;
+        }
     }
 
 }

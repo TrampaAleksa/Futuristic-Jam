@@ -1,14 +1,20 @@
-﻿public class SSignalActive : SSignalState
+﻿public class SSignalConnected : SSignalState
 {
-    public SSignalActive(SSignal signal) : base(signal)
+    public SSignalConnected(SSignal signal) : base(signal)
     {
+    }
+
+    public override void Entry()
+    {
+        base.Entry();
+        signal.Connect();
     }
 
     public override void UpdateAction()
     {
         base.UpdateAction();
 
-        isActive = signal.sender.HasConnections();
+        isActive = signal.turnedOn;
         if (!isActive)
         {
             Exit();
@@ -22,7 +28,7 @@
     public override void Exit()
     {
         base.Exit();
-        signal.state = new SSignalInactive(signal);
+        signal.state = new SSignalDisconnected(signal);
         signal.state.Entry();
     }
 }

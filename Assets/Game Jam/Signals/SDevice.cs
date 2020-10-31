@@ -22,7 +22,7 @@ public class SDevice : MonoBehaviour
             signal.sender = this;
             signal.type = connection.type;
             SignalLineHolder.Instance.InitLine(signal);
-            signal.state = new SSignalInactive(signal);
+            signal.state = new SSignalDisconnected(signal);
             signals.Add(signal);
         }
         
@@ -32,7 +32,7 @@ public class SDevice : MonoBehaviour
     private void Update()
     {
         state.UpdateAction();
-
+        
         foreach (var signal in signals)
         {
             signal.state.UpdateAction();

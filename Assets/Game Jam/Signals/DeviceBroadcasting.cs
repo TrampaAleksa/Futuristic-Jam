@@ -9,15 +9,11 @@ public class DeviceBroadcasting : DeviceState
     public override void Entry()
     {
         base.Entry();
-        ConnectToDevices();
-    }
-
-
-    private void ConnectToDevices()
-    {
         foreach (var signal in device.signals)
         {
-            signal.Connect();
+            signal.turnedOn = true;
+            signal.line.endWidth = 0.04f;
+            signal.line.startWidth = 0.04f;
         }
     }
 
@@ -26,31 +22,15 @@ public class DeviceBroadcasting : DeviceState
         base.UpdateAction();
         if (device.HasConnections())
         {
-            UpdateSignal();
             return;
         }
         Exit();
 
     }
 
-    private void UpdateSignal()
-    {
-        Debug.Log("Signals: sending from " + device.name);
-
-        // foreach (var signal in device.signals)
-        // {
-        //     signal.state.UpdateAction();
-        // }
-    }
-
     public override void Exit()
     {
         base.Exit();
-        SilentMode();
-    }
-
-    private void SilentMode()
-    {
         device.state = new DeviceSilent(device);
         device.state.Entry();
     }

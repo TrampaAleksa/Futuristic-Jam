@@ -1,14 +1,13 @@
-﻿public class SSignalInactive : SSignalState
+﻿public class SSignalDisconnected : SSignalState
 {
-    public SSignalInactive(SSignal signal) : base(signal)
+    public SSignalDisconnected(SSignal signal) : base(signal)
     {
     }
 
     public override void Entry()
     {
         base.Entry();
-        signal.line.endWidth = 0;
-        signal.line.startWidth = 0;
+        signal.Disconnect();
     }
 
     public override void UpdateAction()
@@ -24,10 +23,7 @@
     public override void Exit()
     {
         base.Exit();
-        signal.state = new SSignalActive(signal);
+        signal.state = new SSignalConnected(signal);
         signal.state.Entry();
-        
-        signal.line.endWidth = 0.04f;
-        signal.line.startWidth = 0.04f;
     }
 }

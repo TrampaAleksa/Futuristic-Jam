@@ -17,17 +17,21 @@ public class SSignal
     {
         receiver.connections--;
         if (receiver.connections < 0) receiver.connections = 0;
+        
+        // if (receiver.CompareTag("FinalDevice"))
+        // {
+        //     receiver.FinalDevice.RemoveSignal(this);
+        // }
     }
 
     public void Connect()
     {
         receiver.connections++;
 
-        if (receiver.CompareTag("FinalDevice"))
-        {
-            var finalReceiver = (SFinalDevice) receiver;
-            finalReceiver.ReceiveSignal(this);
-        }
+        // if (receiver.CompareTag("FinalDevice"))
+        // {
+        //     receiver.FinalDevice.ReceiveSignal(this);
+        // }
     }
 
     public bool Interrupted()
@@ -51,4 +55,6 @@ public class SSignal
     {
         get => Vector3.Distance(receiver.transform.position, sender.transform.position) < range * 0.9f;
     }
+
+    
 }

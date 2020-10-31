@@ -26,15 +26,13 @@ public class SignalLineHolder : MonoBehaviour
         }
     }
 
-    public void InitLine(SSignal signal)
+    public LineRenderer InitLine(SSignal signal)
     {
         if (signal.type == SignalType.Bad)
         {
-            signal.line = Instantiate(redLine, transform);
+            return Instantiate(redLine, transform);
         }
-        else
-        {
-            signal.line = Instantiate(greenLine, transform);
-        }
+
+        return Instantiate(greenLine, transform);
     }
 }

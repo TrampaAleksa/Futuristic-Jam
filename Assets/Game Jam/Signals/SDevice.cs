@@ -10,8 +10,15 @@ public class SDevice : MonoBehaviour
     [NonSerialized] public List<SSignal> signals;
     [NonSerialized] public DeviceState state;
 
+    public SFinalDevice FinalDevice;
+
     private void Awake()
     {
+        if (CompareTag("FinalDevice"))
+        {
+            FinalDevice = GetComponent<SFinalDevice>();
+        }
+        
         signals = new List<SSignal>();
 
         foreach (var connection in sendingTo)
@@ -21,7 +28,7 @@ public class SDevice : MonoBehaviour
             signal.receiver = connection.device;
             signal.sender = this;
             signal.type = connection.type;
-            SignalLineHolder.Instance.InitLine(signal);
+            signal.line = FindObjectOfType<SignalLineHolder>().InitLine(signal);
             signal.state = new SSignalDisconnected(signal);
             signal.range = connection.range;
             signals.Add(signal);

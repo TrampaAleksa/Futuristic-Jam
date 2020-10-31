@@ -2,7 +2,7 @@
 
 public class DeviceState
 {
-    private SDevice device;
+    protected SDevice device;
 
     public DeviceState(SDevice device)
     {

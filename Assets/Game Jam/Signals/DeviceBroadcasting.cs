@@ -1,4 +1,6 @@
-﻿public class DeviceBroadcasting : DeviceState
+﻿using UnityEngine;
+
+public class DeviceBroadcasting : DeviceState
 {
     public DeviceBroadcasting(SDevice device) : base(device)
     {
@@ -13,17 +15,22 @@
 
     private void ConnectToDevices()
     {
+        foreach (var signal in device.signals)
+        {
+            signal.Connect();
+        }
     }
 
     public override void UpdateAction()
     {
         base.UpdateAction();
-        CheckConnections();
-        UpdateSignal();
-    }
+        if (device.HasConnections())
+        {
+            UpdateSignal();
+            return;
+        }
+        Exit();
 
-    private void CheckConnections()
-    {
     }
 
     private void UpdateSignal()
@@ -33,15 +40,11 @@
     public override void Exit()
     {
         base.Exit();
-        DisconnectFromDevices();
         SilentMode();
     }
 
     private void SilentMode()
     {
-    }
-
-    private void DisconnectFromDevices()
-    {
+        device.state = new DeviceSilent(device);
     }
 }

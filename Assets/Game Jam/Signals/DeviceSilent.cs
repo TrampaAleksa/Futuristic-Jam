@@ -12,6 +12,10 @@
 
     private void StopSignals()
     {
+        foreach (var signal in device.signals)
+        {
+            signal.Disconnect();
+        }
     }
 
     public override void UpdateAction()
@@ -22,16 +26,20 @@
 
     private void CheckForConnections()
     {
+        if (device.HasConnections())
+        {
+            Exit();
+        }
     }
 
     public override void Exit()
     {
         base.Exit();
-        StartBroadcasting();
+        BroadcastMode();
     }
 
-    private void StartBroadcasting()
+    private void BroadcastMode()
     {
-        
+        device.state = new DeviceBroadcasting(device);
     }
 }

@@ -21,6 +21,11 @@ public class SDevice : MonoBehaviour
         
         state = new DeviceSilent(this);
     }
-    
-    
+
+    private void Update()
+    {
+        state.UpdateAction();
+    }
+
+    public bool HasConnections() => connections > 0;
 }

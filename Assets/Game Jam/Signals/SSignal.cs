@@ -18,20 +18,21 @@ public class SSignal
         receiver.connections--;
         if (receiver.connections < 0) receiver.connections = 0;
         
-        // if (receiver.CompareTag("FinalDevice"))
-        // {
-        //     receiver.FinalDevice.RemoveSignal(this);
-        // }
+        if (receiver.CompareTag("FinalDevice"))
+        {
+            receiver.FinalDevice.RemoveSignal(this);
+        }
     }
 
     public void Connect()
     {
         receiver.connections++;
 
-        // if (receiver.CompareTag("FinalDevice"))
-        // {
-        //     receiver.FinalDevice.ReceiveSignal(this);
-        // }
+        if (receiver.CompareTag("FinalDevice"))
+        {
+            receiver.FinalDevice.AddSignal(this);
+
+        }
     }
 
     public bool Interrupted()

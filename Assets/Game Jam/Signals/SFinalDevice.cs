@@ -1,45 +1,61 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SFinalDevice : MonoBehaviour
 {
-    public List<SSignal> receivedSignals = new List<SSignal>();
 
-    public void ReceiveSignal(SSignal signal)
-    {
-        receivedSignals.Add(signal);
-        bool win = true;
+    public int numberOfBad = 0;
+    public int numberOfGood = 0;
 
-        foreach (var signals in receivedSignals)
-        {
-            if (signal.type == SignalType.Bad)
-            {
-                win = false;
-            }
-        }
-
-        if (win)
-        {
-            Debug.Log("Game Over");
-        }
-    }
+    private bool timerActive;
 
     public void RemoveSignal(SSignal signal)
     {
-        bool win = true;
-        receivedSignals.Remove(signal);
-        
-        foreach (var signals in receivedSignals)
+        if (signal.type == SignalType.Bad)
         {
-            if (signal.type == SignalType.Bad)
+            numberOfBad--;
+        }
+        if (signal.type == SignalType.Good)
+        {
+            numberOfGood--;
+        }
+    }
+    
+    public void AddSignal(SSignal signal)
+    {
+        if (signal.type == SignalType.Bad)
+        {
+            numberOfBad++;
+        }
+        if (signal.type == SignalType.Good)
+        {
+            numberOfGood++;
+        }
+    }
+
+    private void Update()
+    {
+            if (numberOfGood != 0 && numberOfBad <=0)
             {
-                win = false;
+                if (timerActive == false)
+                {
+                    StartCoroutine(DelayForCheck());
+                }
             }
+    }
+
+    private IEnumerator DelayForCheck()
+    {
+        timerActive = true;
+        yield return new WaitForSeconds(2f);
+        
+        if (numberOfGood != 0 && numberOfBad <=0)
+        {
+            print("Won the game");
         }
 
-        if (win)
-        {
-            Debug.Log("Game Over");
-        }
+        timerActive = false;
     }
 }

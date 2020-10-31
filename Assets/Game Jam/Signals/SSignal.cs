@@ -22,6 +22,12 @@ public class SSignal
     public void Connect()
     {
         receiver.connections++;
+
+        if (receiver.CompareTag("FinalDevice"))
+        {
+            var finalReceiver = (SFinalDevice) receiver;
+            finalReceiver.ReceiveSignal(this);
+        }
     }
 
     public bool Interrupted()

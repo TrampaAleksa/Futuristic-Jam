@@ -29,4 +29,13 @@ public class SignalLineDrawer : MonoBehaviour
         signal.line.SetPosition(1, receiverPosition);
     }
     
+    public static void WallLineDraw(SSignal signal)
+    {
+        var broadcasterPosition = signal.sender.transform.position;
+        var hitPoint = signal.hit.point;
+        
+        signal.line.SetPosition(0, broadcasterPosition);
+        signal.line.SetPosition(1, hitPoint);
+    }
+    
 }

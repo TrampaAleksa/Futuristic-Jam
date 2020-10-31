@@ -20,6 +20,12 @@
             return;
         }
         
+        if (signal.Interrupted())
+        {
+            SignalLineDrawer.WallLineDraw(signal);
+            return;
+        }
+        
         SignalLineDrawer.ReceiverLineDraw(signal);
 
     }

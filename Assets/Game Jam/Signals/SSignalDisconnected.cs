@@ -17,6 +17,14 @@
         {
             Exit();
         }
+
+        if (signal.Interrupted())
+        {
+            SignalLineDrawer.WallLineDraw(signal);
+            return;
+        }
+        SignalLineDrawer.ReceiverLineDraw(signal);
+
     }
 
     public override void Exit()

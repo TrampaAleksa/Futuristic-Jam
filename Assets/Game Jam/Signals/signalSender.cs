@@ -5,7 +5,7 @@ using UnityEngine.Events;
 public class SignalSender : MonoBehaviour
 {
     public RaycastHit hit;
-    private UnityEvent<Signal> hitEvents;
+    private UnityEvent<Signal> signalReceivedEvents;
     private UnityEvent<Signal> wallEvents;
     private UnityEvent<Signal> noRangeEvents;
 
@@ -17,15 +17,16 @@ public class SignalSender : MonoBehaviour
     {
         broadcaster = GetComponent<SignalDevice>();
         
-        hitEvents = new UnityEvent<Signal>();
+        signalReceivedEvents = new UnityEvent<Signal>();
         wallEvents = new UnityEvent<Signal>();
         noRangeEvents = new UnityEvent<Signal>();
 
         if (broadcaster.signal.receiver != null)
         {
-            hitEvents.AddListener( GetComponent<SignalLineDrawer>().ReceiverLineDraw);
-            hitEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalReceiver>().ReceiveSignal);
-            hitEvents.AddListener( GetComponent<SignalDampener>().DampenSignal);
+            signalReceivedEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalReceiver>().ReceiveSignal);
+            
+            signalReceivedEvents.AddListener( GetComponent<SignalLineDrawer>().ReceiverLineDraw);
+            signalReceivedEvents.AddListener( GetComponent<SignalDampener>().DampenSignal);
 
             wallEvents.AddListener(GetComponent<SignalLineDrawer>().WallLineDraw);
             wallEvents.AddListener(GetComponent<SignalDampener>().DampenSignal);
@@ -53,7 +54,7 @@ public class SignalSender : MonoBehaviour
             if (SignalInterrupted(signal))
                 wallEvents?.Invoke(signal);
             else
-                hitEvents?.Invoke(signal);
+                signalReceivedEvents?.Invoke(signal);
     }
     
     private bool SignalInterrupted(Signal signal)

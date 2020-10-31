@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SignalBroadcaster : MonoBehaviour
+public class SignalSender : MonoBehaviour
 {
     public RaycastHit hit;
     public UnityEvent<Signal> hitEvents;
@@ -11,20 +11,35 @@ public class SignalBroadcaster : MonoBehaviour
 
     private SignalDevice broadcaster;
 
+    public bool source;
+
     private void Awake()
     {
         broadcaster = GetComponent<SignalDevice>();
+
+        if (broadcaster.signal.receiver != null)
+        {
+            hitEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalLineDrawer>().ReceiverLineDraw);
+            hitEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalReceiver>().ReceiveSignal);
+            hitEvents.AddListener( GetComponent<SignalDampener>().DampenSignal);
+
+            wallEvents.AddListener(GetComponent<SignalLineDrawer>().WallLineDraw);
+            wallEvents.AddListener(GetComponent<SignalDampener>().DampenSignal);
+        
+            noRangeEvents.AddListener(GetComponent<SignalDampener>().NoSignal);
+        }
     }
 
     private void Update()
     {
-        SendBroadcast();
+        if (source)
+        {
+            SendBroadcast(broadcaster.signal);
+        }
     }
     
-    protected virtual void SendBroadcast()
+    public virtual void SendBroadcast(Signal signal)
     {
-        foreach (var signal in broadcaster.signals)
-        {
             if (!signal.InRange)
             {
                 noRangeEvents?.Invoke(signal);
@@ -35,7 +50,6 @@ public class SignalBroadcaster : MonoBehaviour
                 wallEvents?.Invoke(signal);
             else
                 hitEvents?.Invoke(signal);
-        }
     }
     
     private bool SignalInterrupted(Signal signal)

@@ -7,16 +7,13 @@ public class SignalLineHolder : MonoBehaviour
 
     public void InitLines(SignalDevice device)
     {
-        foreach (var signal in device.signals)
-        {
-            if (signal.type == SignalType.Bad)
+            if (device.signal.type == SignalType.Bad)
             {
-                signal.line = Instantiate(redLine, transform);
+                device.signal.line = Instantiate(redLine, transform);
             }
             else
             {
-                signal.line = Instantiate(greenLine, transform);
+                device.signal.line = Instantiate(greenLine, transform);
             }
-        }
     }
 }

@@ -5,8 +5,9 @@ using UnityEngine;
 public class SignalDevice : MonoBehaviour
 {
     public Signal signal;
-    public SignalReceiver receiver;
-    public SignalSender sender;
+    [NonSerialized]public SignalReceiver receiver;
+    [NonSerialized]public SignalSender sender;
+    [NonSerialized] public SignalBreaker breakerSignal;
 
     private void Awake()
     {
@@ -14,6 +15,7 @@ public class SignalDevice : MonoBehaviour
         FindObjectOfType<SignalLineHolder>().InitLines(this);
         sender = GetComponent<SignalSender>();
         receiver = GetComponent<SignalReceiver>();
+        breakerSignal = GetComponent<SignalBreaker>();
     }
     
     private void InitSignals(SignalDevice broadcaster)

@@ -30,8 +30,9 @@ public class SignalSender : MonoBehaviour
 
             wallEvents.AddListener(GetComponent<SignalLineDrawer>().WallLineDraw);
             wallEvents.AddListener(GetComponent<SignalDampener>().DampenSignal);
+            wallEvents.AddListener(GetComponent<SignalBreaker>().NoSignalWall);
         
-            noRangeEvents.AddListener(GetComponent<SignalDampener>().NoSignal);
+            noRangeEvents.AddListener(GetComponent<SignalBreaker>().NoSignalRange);
         }
     }
 

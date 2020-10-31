@@ -277,9 +277,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signals:
-  - receiver: {fileID: 0}
+  - receiver: {fileID: 2079665022}
     type: 1
-    range: 15
+    range: 6
 --- !u!4 &381164105
 Transform:
   m_ObjectHideFlags: 0
@@ -643,7 +643,7 @@ MonoBehaviour:
   signals:
   - receiver: {fileID: 381164104}
     type: 0
-    range: 15
+    range: 6
 --- !u!4 &1493468852
 Transform:
   m_ObjectHideFlags: 0
@@ -933,7 +933,7 @@ MonoBehaviour:
   signals:
   - receiver: {fileID: 1493468851}
     type: 0
-    range: 15
+    range: 6
 --- !u!4 &2079665023
 Transform:
   m_ObjectHideFlags: 0

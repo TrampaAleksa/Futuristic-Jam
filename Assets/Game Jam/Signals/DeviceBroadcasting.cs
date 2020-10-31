@@ -37,10 +37,10 @@ public class DeviceBroadcasting : DeviceState
     {
         Debug.Log("Signals: sending from " + device.name);
 
-        foreach (var signal in device.signals)
-        {
-            SignalLineDrawer.ReceiverLineDraw(signal);
-        }
+        // foreach (var signal in device.signals)
+        // {
+        //     signal.state.UpdateAction();
+        // }
     }
 
     public override void Exit()

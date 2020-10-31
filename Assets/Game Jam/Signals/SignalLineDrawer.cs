@@ -7,8 +7,8 @@ public class SignalLineDrawer : MonoBehaviour
         var broadcasterPosition = signal.broadcaster.transform.position;
         var hitPoint = signal.hit.point;
         
-        signal.broadcaster.line.SetPosition(0, broadcasterPosition);
-        signal.broadcaster.line.SetPosition(1, hitPoint);
+        signal.line.SetPosition(0, broadcasterPosition);
+        signal.line.SetPosition(1, hitPoint);
     }
 
     public void ReceiverLineDraw(Signal signal)
@@ -16,8 +16,8 @@ public class SignalLineDrawer : MonoBehaviour
         var receiverPosition = signal.receiver.transform.position;
         var broadcasterPosition = signal.broadcaster.transform.position;
         
-        signal.broadcaster.line.SetPosition(0, broadcasterPosition);
-        signal.broadcaster.line.SetPosition(1, receiverPosition);
+        signal.line.SetPosition(0, broadcasterPosition);
+        signal.line.SetPosition(1, receiverPosition);
     }
     
 }

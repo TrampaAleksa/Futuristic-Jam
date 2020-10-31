@@ -7,6 +7,7 @@ public class SignalBroadcaster : MonoBehaviour
     public RaycastHit hit;
     public UnityEvent<Signal> hitEvents;
     public UnityEvent<Signal> wallEvents;
+    public UnityEvent<Signal> noRangeEvents;
 
     private SignalDevice broadcaster;
 
@@ -24,6 +25,12 @@ public class SignalBroadcaster : MonoBehaviour
     {
         foreach (var signal in broadcaster.signals)
         {
+            if (!signal.InRange)
+            {
+                noRangeEvents?.Invoke(signal);
+                return;
+            }
+            
             if (SignalInterrupted(signal))
                 wallEvents?.Invoke(signal);
             else

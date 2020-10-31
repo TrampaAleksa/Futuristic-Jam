@@ -21,6 +21,8 @@ public class Signal
             return Mathf.InverseLerp(range, 0, deviceDistance);
         }
     }
+
+    public bool InRange { get => Vector3.Distance(receiver.transform.position, broadcaster.transform.position) < range * 0.9f;}
 }
 
 public enum SignalType

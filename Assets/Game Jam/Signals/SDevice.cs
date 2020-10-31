@@ -6,7 +6,7 @@ public class SDevice : MonoBehaviour
 {
     public int connections;
 
-    [SerializeField] private List<SDevice> sendingTo;
+    [SerializeField] private List<SignalConnection> sendingTo;
     [NonSerialized] public List<SSignal> signals;
     [NonSerialized] public DeviceState state;
 
@@ -14,13 +14,15 @@ public class SDevice : MonoBehaviour
     {
         signals = new List<SSignal>();
 
-        foreach (var sDevice in sendingTo)
+        foreach (var connection in sendingTo)
         {
             var signal = new SSignal();
             
-            signal.receiver = sDevice;
+            signal.receiver = connection.device;
             signal.sender = this;
-
+            signal.type = connection.type;
+            SignalLineHolder.Instance.InitLine(signal);
+            
             signals.Add(signal);
         }
         
@@ -33,4 +35,12 @@ public class SDevice : MonoBehaviour
     }
 
     public bool HasConnections() => connections > 0;
+}
+
+[Serializable]
+public class SignalConnection
+{
+    [SerializeField] public SDevice device;
+    [SerializeField] public SignalType type;
+    [SerializeField] public float range;
 }

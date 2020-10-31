@@ -36,6 +36,11 @@ public class DeviceBroadcasting : DeviceState
     private void UpdateSignal()
     {
         Debug.Log("Signals: sending from " + device.name);
+
+        foreach (var signal in device.signals)
+        {
+            SignalLineDrawer.ReceiverLineDraw(signal);
+        }
     }
 
     public override void Exit()

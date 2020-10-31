@@ -1,10 +1,11 @@
-﻿public class SSignal
+﻿using UnityEngine;
+
+public class SSignal
 {
     public SDevice sender;
     public SDevice receiver;
-
-    public bool isActive;
-
+    public LineRenderer line;
+    public SignalType type;
 
     public void Disconnect()
     {
@@ -15,4 +16,6 @@
     {
         receiver.connections++;
     }
+    
+    
 }

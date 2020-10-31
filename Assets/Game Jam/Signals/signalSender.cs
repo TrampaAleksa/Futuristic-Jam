@@ -25,10 +25,10 @@ public class SignalSender : MonoBehaviour
         {
             signalReceivedEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalReceiver>().ReceiveSignal);
             
-            signalReceivedEvents.AddListener( GetComponent<SignalLineDrawer>().ReceiverLineDraw);
+            signalReceivedEvents.AddListener( SignalLineDrawer.ReceiverLineDraw);
             signalReceivedEvents.AddListener( GetComponent<SignalDampener>().DampenSignal);
 
-            wallEvents.AddListener(GetComponent<SignalLineDrawer>().WallLineDraw);
+            wallEvents.AddListener(SignalLineDrawer.WallLineDraw);
             wallEvents.AddListener(GetComponent<SignalDampener>().DampenSignal);
             wallEvents.AddListener(GetComponent<SignalBreaker>().NoSignalWall);
         

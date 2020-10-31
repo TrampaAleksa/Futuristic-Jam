@@ -2,7 +2,7 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-public class SignalDeviceBroadcaster : MonoBehaviour
+public class SignalBroadcaster : MonoBehaviour
 {
     public RaycastHit hit;
     public UnityEvent<Signal> hitEvents;

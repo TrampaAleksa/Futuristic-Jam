@@ -18,6 +18,12 @@
             Exit();
         }
 
+        if (!signal.InRange)
+        {
+            signal.line.endWidth = 0;
+            signal.line.startWidth = 0;
+        }
+        
         if (signal.Interrupted())
         {
             SignalLineDrawer.WallLineDraw(signal);

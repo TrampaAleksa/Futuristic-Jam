@@ -239,10 +239,10 @@ MonoBehaviour:
   sendingTo:
   - device: {fileID: 759876389}
     type: 0
-    range: 0
+    range: 8
   - device: {fileID: 1765977009}
     type: 1
-    range: 0
+    range: 8
 --- !u!4 &324670041
 Transform:
   m_ObjectHideFlags: 0
@@ -290,7 +290,7 @@ MonoBehaviour:
   sendingTo:
   - device: {fileID: 1765977009}
     type: 1
-    range: 0
+    range: 8
 --- !u!4 &759876390
 Transform:
   m_ObjectHideFlags: 0
@@ -338,7 +338,7 @@ MonoBehaviour:
   sendingTo:
   - device: {fileID: 1802728629}
     type: 1
-    range: 0
+    range: 8
 --- !u!4 &915245274
 Transform:
   m_ObjectHideFlags: 0
@@ -523,7 +523,7 @@ MonoBehaviour:
   sendingTo:
   - device: {fileID: 915245273}
     type: 0
-    range: 0
+    range: 8
 --- !u!4 &1765977010
 Transform:
   m_ObjectHideFlags: 0

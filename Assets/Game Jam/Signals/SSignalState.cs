@@ -1,6 +1,6 @@
 ﻿public class SSignalState
 {
-    public bool IsConnected { get => signal.turnedOn && !signal.Interrupted();}
+    public bool IsConnected { get => signal.turnedOn && !signal.Interrupted() && signal.InRange;}
     public SSignal signal;
 
     public SSignalState(SSignal signal)

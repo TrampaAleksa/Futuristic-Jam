@@ -12,8 +12,8 @@ public class DeviceBroadcasting : DeviceState
         foreach (var signal in device.signals)
         {
             signal.turnedOn = true;
-            signal.line.endWidth = 0.04f;
-            signal.line.startWidth = 0.04f;
+            // signal.line.endWidth = 0.04f;
+            // signal.line.startWidth = 0.04f;
         }
     }
 

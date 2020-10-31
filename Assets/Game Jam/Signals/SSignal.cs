@@ -7,6 +7,7 @@ public class SSignal
     public LineRenderer line;
     public SignalType type;
     public RaycastHit hit;
+    public float range;
 
     public bool turnedOn;
 
@@ -29,5 +30,19 @@ public class SSignal
         var broadcasterPosition = sender.transform.position;
 
         return Physics.Linecast(broadcasterPosition, receiverPosition, out hit, LayerMask.GetMask("Wall"));
+    }
+    
+    public float Damperer
+    {
+        get
+        {
+            var deviceDistance = Vector3.Distance(receiver.transform.position, sender.transform.position);
+            return Mathf.InverseLerp(range, 0, deviceDistance);
+        }
+    }
+    
+    public bool InRange
+    {
+        get => Vector3.Distance(receiver.transform.position, sender.transform.position) < range * 0.9f;
     }
 }

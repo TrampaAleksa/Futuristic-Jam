@@ -19,7 +19,11 @@
             Exit();
             return;
         }
-        
+
+        var width = signal.Damperer / 10f;
+        signal.line.endWidth = width;
+        signal.line.startWidth = width;
+
         if (signal.Interrupted())
         {
             SignalLineDrawer.WallLineDraw(signal);

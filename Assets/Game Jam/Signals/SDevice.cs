@@ -23,6 +23,7 @@ public class SDevice : MonoBehaviour
             signal.type = connection.type;
             SignalLineHolder.Instance.InitLine(signal);
             signal.state = new SSignalDisconnected(signal);
+            signal.range = connection.range;
             signals.Add(signal);
         }
         

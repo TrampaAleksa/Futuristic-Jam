@@ -41,5 +41,6 @@
     private void BroadcastMode()
     {
         device.state = new DeviceBroadcasting(device);
+        device.state.Entry();
     }
 }

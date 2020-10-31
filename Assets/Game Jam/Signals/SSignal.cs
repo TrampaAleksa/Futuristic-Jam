@@ -3,6 +3,8 @@
     public SDevice sender;
     public SDevice receiver;
 
+    public bool isActive;
+
 
     public void Disconnect()
     {

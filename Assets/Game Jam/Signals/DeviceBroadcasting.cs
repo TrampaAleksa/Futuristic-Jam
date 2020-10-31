@@ -35,6 +35,7 @@ public class DeviceBroadcasting : DeviceState
 
     private void UpdateSignal()
     {
+        Debug.Log("Signals: sending from " + device.name);
     }
 
     public override void Exit()
@@ -46,5 +47,6 @@ public class DeviceBroadcasting : DeviceState
     private void SilentMode()
     {
         device.state = new DeviceSilent(device);
+        device.state.Entry();
     }
 }

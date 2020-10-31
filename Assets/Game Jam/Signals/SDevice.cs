@@ -17,6 +17,11 @@ public class SDevice : MonoBehaviour
         foreach (var sDevice in sendingTo)
         {
             var signal = new SSignal();
+            
+            signal.receiver = sDevice;
+            signal.sender = this;
+
+            signals.Add(signal);
         }
         
         state = new DeviceSilent(this);

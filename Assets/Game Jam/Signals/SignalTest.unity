@@ -210,15 +210,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e9e2da5139473d8b0405e209395aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  wallEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  noRangeEvents:
-    m_PersistentCalls:
-      m_Calls: []
   source: 0
 --- !u!114 &381164104
 MonoBehaviour:
@@ -236,7 +227,8 @@ MonoBehaviour:
     receiver: {fileID: 2079665022}
     type: 0
     range: 6
-  broadcaster: {fileID: 0}
+  receiver: {fileID: 0}
+  sender: {fileID: 0}
 --- !u!4 &381164105
 Transform:
   m_ObjectHideFlags: 0
@@ -293,7 +285,6 @@ Transform:
   - {fileID: 1493468852}
   - {fileID: 381164105}
   - {fileID: 2079665023}
-  - {fileID: 1463394153}
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -475,116 +466,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1463394152
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1463394153}
-  - component: {fileID: 1463394158}
-  - component: {fileID: 1463394157}
-  - component: {fileID: 1463394156}
-  - component: {fileID: 1463394155}
-  - component: {fileID: 1463394154}
-  m_Layer: 0
-  m_Name: Device4
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1463394153
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.56, y: 0, z: 0.8}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 427865703}
-  m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1463394154
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ddd48518cbae419ea8ef43aa1aa4225b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1463394155
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6844929213844bcea9f1f2b599717ca6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1463394156
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3ee61c3d144e4ebdfbdb605eb76a39, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1463394157
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e9e2da5139473d8b0405e209395aa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  hitEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  wallEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  noRangeEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  source: 0
---- !u!114 &1463394158
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1463394152}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 407e3c0a682d4d9192e29dd0973efbe5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  signal:
-    receiver: {fileID: 0}
-    type: 0
-    range: 6
-  broadcaster: {fileID: 0}
 --- !u!1 &1493468847
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,16 +523,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 65e9e2da5139473d8b0405e209395aa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  wallEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  noRangeEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  source: 0
+  source: 1
 --- !u!114 &1493468851
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -668,7 +540,8 @@ MonoBehaviour:
     receiver: {fileID: 381164104}
     type: 0
     range: 6
-  broadcaster: {fileID: 0}
+  receiver: {fileID: 0}
+  sender: {fileID: 0}
 --- !u!4 &1493468852
 Transform:
   m_ObjectHideFlags: 0
@@ -842,10 +715,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2079665023}
   - component: {fileID: 2079665022}
-  - component: {fileID: 2079665021}
-  - component: {fileID: 2079665020}
   - component: {fileID: 2079665024}
   - component: {fileID: 2079665019}
+  - component: {fileID: 2079665021}
+  - component: {fileID: 2079665020}
   m_Layer: 0
   m_Name: Device3
   m_TagString: Untagged
@@ -874,9 +747,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 2079665018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6a3ee61c3d144e4ebdfbdb605eb76a39, type: 3}
+  m_Script: {fileID: 11500000, guid: b7df7b8d25c74125914c8b24ed6b04e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  source: 0
 --- !u!114 &2079665021
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -886,19 +760,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 2079665018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 65e9e2da5139473d8b0405e209395aa1, type: 3}
+  m_Script: {fileID: 11500000, guid: f6157097dac94609883a96f081d91e6b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hitEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  wallEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  noRangeEvents:
-    m_PersistentCalls:
-      m_Calls: []
-  source: 0
 --- !u!114 &2079665022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,10 +776,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   signal:
-    receiver: {fileID: 1463394158}
+    receiver: {fileID: 2079665022}
     type: 0
     range: 6
-  broadcaster: {fileID: 0}
+  receiver: {fileID: 0}
+  sender: {fileID: 0}
 --- !u!4 &2079665023
 Transform:
   m_ObjectHideFlags: 0

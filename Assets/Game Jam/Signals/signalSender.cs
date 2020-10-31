@@ -5,9 +5,9 @@ using UnityEngine.Events;
 public class SignalSender : MonoBehaviour
 {
     public RaycastHit hit;
-    public UnityEvent<Signal> hitEvents;
-    public UnityEvent<Signal> wallEvents;
-    public UnityEvent<Signal> noRangeEvents;
+    private UnityEvent<Signal> hitEvents;
+    private UnityEvent<Signal> wallEvents;
+    private UnityEvent<Signal> noRangeEvents;
 
     private SignalDevice broadcaster;
 
@@ -16,10 +16,14 @@ public class SignalSender : MonoBehaviour
     private void Awake()
     {
         broadcaster = GetComponent<SignalDevice>();
+        
+        hitEvents = new UnityEvent<Signal>();
+        wallEvents = new UnityEvent<Signal>();
+        noRangeEvents = new UnityEvent<Signal>();
 
         if (broadcaster.signal.receiver != null)
         {
-            hitEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalLineDrawer>().ReceiverLineDraw);
+            hitEvents.AddListener( GetComponent<SignalLineDrawer>().ReceiverLineDraw);
             hitEvents.AddListener( broadcaster.signal.receiver.GetComponent<SignalReceiver>().ReceiveSignal);
             hitEvents.AddListener( GetComponent<SignalDampener>().DampenSignal);
 

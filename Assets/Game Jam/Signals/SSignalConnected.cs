@@ -14,8 +14,7 @@
     {
         base.UpdateAction();
 
-        isActive = signal.turnedOn;
-        if (!isActive)
+        if (!IsConnected)
         {
             Exit();
             return;

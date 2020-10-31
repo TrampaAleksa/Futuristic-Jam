@@ -13,8 +13,7 @@
     public override void UpdateAction()
     {
         base.UpdateAction();
-        isActive = signal.sender.HasConnections();
-        if (isActive)
+        if (IsConnected)
         {
             Exit();
         }

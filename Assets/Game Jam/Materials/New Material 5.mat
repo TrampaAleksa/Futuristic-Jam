@@ -8,14 +8,15 @@ Material:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: New Material 5
-  m_Shader: {fileID: -6465566751694194690, guid: f37ec601256e3d945a9befd9a111db8a, type: 3}
+  m_Shader: {fileID: -6465566751694194690, guid: 464dca13516f172499a848d41e48c829, type: 3}
   m_ShaderKeywords: _BLENDMODE_ALPHA _ENABLE_FOG_ON_TRANSPARENT _SURFACE_TYPE_TRANSPARENT
   m_LightmapFlags: 2
   m_EnableInstancingVariants: 0
   m_DoubleSidedGI: 0
-  m_CustomRenderQueue: -1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     MotionVector: User
+    RenderType: Transparent
   disabledShaderPasses:
   - DistortionVectors
   - TransparentBackface
@@ -26,6 +27,10 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - Texture2D_48882336:
+        m_Texture: {fileID: 2800000, guid: 7d4bc0eabc88972428a104e7eebfc2d7, type: 3}
+        m_Scale: {x: 1, y: 1}
+        m_Offset: {x: 0, y: 0}
+    - Texture2D_4ED1F944:
         m_Texture: {fileID: 2800000, guid: 7d4bc0eabc88972428a104e7eebfc2d7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
@@ -118,8 +123,9 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
+    - Vector1_123B87CA: 0.1
     - Vector1_1D9A2AE: 9.91
-    - Vector1_6DC2C68C: 200
+    - Vector1_6DC2C68C: 300
     - Vector1_EFE64959: 26
     - Vector1_FEFF47F1: 0.6
     - _AORemapMax: 1
@@ -197,7 +203,7 @@ Material:
     - _PPDMinSamples: 5
     - _PPDPrimitiveLength: 1
     - _PPDPrimitiveWidth: 1
-    - _ReceivesSSR: 1
+    - _ReceivesSSR: 0
     - _RefractionModel: 0
     - _RenderQueueType: 5
     - _RequireSplitLighting: 0
@@ -210,10 +216,10 @@ Material:
     - _SpecularOcclusionMode: 1
     - _SrcBlend: 1
     - _StencilRef: 0
-    - _StencilRefDepth: 8
+    - _StencilRefDepth: 0
     - _StencilRefDistortionVec: 4
-    - _StencilRefGBuffer: 10
-    - _StencilRefMV: 40
+    - _StencilRefGBuffer: 2
+    - _StencilRefMV: 32
     - _StencilWriteMask: 6
     - _StencilWriteMaskDepth: 8
     - _StencilWriteMaskDistortionVec: 4
@@ -245,10 +251,12 @@ Material:
     - _ZWrite: 0
     m_Colors:
     - Color_19C6C157: {r: 0, g: 1, b: 0.817842, a: 0}
+    - Color_2FD5B7A4: {r: 0.90196085, g: 1, b: 0, a: 1}
     - Color_6DF76E71: {r: 0, g: 9.406777, b: 28.51895, a: 0}
-    - Color_E20A8D5E: {r: 1.5849054, g: 0.5808554, b: 0, a: 0}
+    - Color_E20A8D5E: {r: 1.5849054, g: 0.5808554, b: 0, a: 1}
     - Color_E448CF9F: {r: 1.498039, g: 0.5411765, b: 0, a: 0}
     - Vector2_6925FF1E: {r: 1, g: 3, b: 0, a: 0}
+    - Vector2_F003C2F4: {r: 1, g: 3, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
     - _BaseColorMap_MipInfo: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}

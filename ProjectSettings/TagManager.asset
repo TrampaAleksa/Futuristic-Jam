@@ -8,12 +8,15 @@ TagManager:
   - PickedUpDevice
   - ms+
   - ms-
+<<<<<<< Updated upstream
   - timer+
   - timer-
   - teleport1+
   - teleport1-
   - teleport2+
   - teleport2-
+=======
+>>>>>>> Stashed changes
   layers:
   - Default
   - TransparentFX

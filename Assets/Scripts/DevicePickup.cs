@@ -7,8 +7,9 @@ using UnityEngine;
 public class DevicePickup : MonoBehaviour
 {
     private static bool isPickedUp;
-    [SerializeField] float sizeOfPickedUpDevice;
-
+    [SerializeField] Vector3 sizeOfPickedUpDevice;
+    [SerializeField] Vector3 sizeAfterDropping;
+    
     [SerializeField] float vratiDeviceNaVisinu = 1;
 
     private GameObject robot;
@@ -37,11 +38,8 @@ public class DevicePickup : MonoBehaviour
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 this.gameObject.transform.position = new Vector3(gameObject.transform.position.x,
                     vratiDeviceNaVisinu, transform.position.z);
-                Vector3 newScale = transform.localScale;
-                newScale.x = 1;
-                newScale.y = 1;
-                newScale.z = 1;
-                transform.localScale = newScale;
+              
+                // transform.localScale = sizeAfterDropping;
                 this.gameObject.transform.parent = deviceHolder.transform;
                 isPickedUp = false;
                 this.gameObject.GetComponent<Collider>().enabled = true;
@@ -62,11 +60,8 @@ public class DevicePickup : MonoBehaviour
                 isPickedUp = true;
 
                 // pokupljen device iznad glave               
-                Vector3 newScale = gameObject.transform.localScale;
-                newScale.x = sizeOfPickedUpDevice;
-                newScale.y = sizeOfPickedUpDevice;
-                newScale.z = sizeOfPickedUpDevice;
-                transform.localScale = newScale;
+             
+                // transform.localScale = sizeOfPickedUpDevice;
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 this.gameObject.GetComponent<Collider>().enabled = false;
 

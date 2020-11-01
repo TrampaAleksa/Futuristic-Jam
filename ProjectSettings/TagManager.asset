@@ -6,6 +6,14 @@ TagManager:
   tags:
   - FinalDevice
   - PickedUpDevice
+  - ms+
+  - ms-
+  - timer+
+  - timer-
+  - teleport1+
+  - teleport1-
+  - teleport2+
+  - teleport2-
   layers:
   - Default
   - TransparentFX

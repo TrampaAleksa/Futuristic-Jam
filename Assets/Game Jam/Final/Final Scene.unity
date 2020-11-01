@@ -169,7 +169,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 116785327}
     type: 0
@@ -731,9 +731,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &116785329
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -742,7 +743,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116785326}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.6849432, y: 2.1880555, z: 1.2897376}
@@ -803,12 +804,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 116785326}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.6, y: 8.3, z: 0.43}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5609855, y: 0.56098557, z: 0.43045935, w: -0.43045932}
+  m_LocalPosition: {x: -4.604167, y: 0.0031814575, z: 9.863438}
+  m_LocalScale: {x: 0.49183303, y: 0.368575, z: 1.110986}
   m_Children: []
-  m_Father: {fileID: 1499304025}
-  m_RootOrder: 1
+  m_Father: {fileID: 373118590}
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &157850694
 GameObject:
@@ -938,9 +939,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &191222830
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -966,7 +968,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 560170807}
     type: 0
@@ -1157,7 +1159,7 @@ Transform:
   - {fileID: 1018839438}
   - {fileID: 1263207211}
   m_Father: {fileID: 373118590}
-  m_RootOrder: 3
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &284357746
 GameObject:
@@ -1205,7 +1207,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 2
+  connections: 0
   sendingTo:
   - device: {fileID: 333437359}
     type: 0
@@ -1372,7 +1374,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 3
+  connections: 0
   sendingTo: []
   FinalDevice: {fileID: 333437360}
 --- !u!114 &333437360
@@ -1387,8 +1389,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94e13d0f3f3a433088f227b9bece323c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  numberOfBad: 2
-  numberOfGood: 1
+  numberOfBad: 0
+  numberOfGood: 0
 --- !u!65 &333437361
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1463,7 +1465,7 @@ Transform:
   m_LocalScale: {x: 1.16747, y: 0.87488997, z: 2.6371498}
   m_Children: []
   m_Father: {fileID: 373118590}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &368632393
 GameObject:
@@ -1573,16 +1575,18 @@ Transform:
   m_LocalPosition: {x: -0.11, y: 31.39, z: -42.1}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1911930098}
   - {fileID: 333437364}
-  - {fileID: 1271836954}
   - {fileID: 279505974}
   - {fileID: 1452031357}
+  - {fileID: 1303566455}
+  - {fileID: 116785332}
   - {fileID: 1981711599}
   - {fileID: 191222828}
   - {fileID: 606817930}
   - {fileID: 500223935}
   - {fileID: 1590952473}
+  - {fileID: 1911930098}
+  - {fileID: 1271836954}
   - {fileID: 458832570}
   m_Father: {fileID: 0}
   m_RootOrder: 6
@@ -1700,7 +1704,7 @@ Transform:
   m_LocalScale: {x: 1.1674651, y: 0.8748872, z: 2.6371498}
   m_Children: []
   m_Father: {fileID: 373118590}
-  m_RootOrder: 10
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &458832571
 MonoBehaviour:
@@ -1832,9 +1836,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &500223937
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1860,7 +1865,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 1590952476}
     type: 0
@@ -1994,7 +1999,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 2
+  connections: 0
   sendingTo:
   - device: {fileID: 333437359}
     type: 0
@@ -2176,7 +2181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 2071691874}
     type: 0
@@ -2194,9 +2199,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &606817927
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2452,7 +2458,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 3
-  player: {fileID: 0}
+  player: {fileID: 742533208}
   time: {fileID: 1967546348}
   bonusMoveSpeed: 1
   bonusTime: 5
@@ -2857,7 +2863,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 333437359}
     type: 1
@@ -3172,7 +3178,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 1499304026}
     type: 0
@@ -3286,7 +3292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 191222831}
     type: 1
@@ -3387,7 +3393,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 191222831}
     type: 0
@@ -3405,9 +3411,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1271836951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3482,7 +3489,7 @@ Transform:
   m_LocalScale: {x: 0.49183, y: 0.36857998, z: 1.1109899}
   m_Children: []
   m_Father: {fileID: 373118590}
-  m_RootOrder: 2
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1286047548
 GameObject:
@@ -3716,12 +3723,12 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303566454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 8.9, y: 8.9, z: -1.06}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalRotation: {x: 0.5609855, y: 0.56098557, z: 0.43045935, w: -0.43045932}
+  m_LocalPosition: {x: -4.3830233, y: -0.004585266, z: 16.230305}
+  m_LocalScale: {x: 0.49183303, y: 0.368575, z: 1.110986}
   m_Children: []
-  m_Father: {fileID: 1499304025}
-  m_RootOrder: 0
+  m_Father: {fileID: 373118590}
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1303566456
 MonoBehaviour:
@@ -3735,9 +3742,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1303566457
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3746,7 +3754,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1303566454}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 2.6849432, y: 2.1880555, z: 1.2897376}
@@ -4013,7 +4021,7 @@ Transform:
   m_LocalScale: {x: 0.49183, y: 0.36857998, z: 1.1109899}
   m_Children: []
   m_Father: {fileID: 373118590}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1452031358
 MonoBehaviour:
@@ -4027,9 +4035,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1452031359
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4237,9 +4246,7 @@ Transform:
   m_LocalRotation: {x: 0.5609855, y: 0.56098557, z: 0.43045935, w: -0.43045932}
   m_LocalPosition: {x: -8.04, y: 18.474466, z: 10.99}
   m_LocalScale: {x: 0.49183303, y: 0.368575, z: 1.110986}
-  m_Children:
-  - {fileID: 1303566455}
-  - {fileID: 116785332}
+  m_Children: []
   m_Father: {fileID: 279505974}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4255,7 +4262,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 1303566458}
     type: 0
@@ -4373,9 +4380,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1590952475
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4401,7 +4409,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 1271836949}
     type: 0
@@ -4753,7 +4761,7 @@ Transform:
   m_LocalScale: {x: 0.49183, y: 0.36857998, z: 1.1109899}
   m_Children: []
   m_Father: {fileID: 373118590}
-  m_RootOrder: 0
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1911930099
 MonoBehaviour:
@@ -4767,9 +4775,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1911930100
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5029,7 +5038,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 1271836949}
     type: 0
@@ -5050,9 +5059,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac91ceccc8d2ebb4b8c671a3c14e70ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sizeOfPickedUpDevice: 0
-  vratiDeviceNaVisinu: 1
-  deviceHolder: {fileID: 0}
+  sizeOfPickedUpDevice: {x: 0, y: 0, z: 0}
+  sizeAfterDropping: {x: 0, y: 0, z: 0}
+  vratiDeviceNaVisinu: 31.39
+  deviceHolder: {fileID: 373118589}
 --- !u!65 &1981711596
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -5175,7 +5185,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f2c748b8cf41b5bca811be4bc7c36e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  connections: 1
+  connections: 0
   sendingTo:
   - device: {fileID: 9585154}
     type: 0

@@ -2966,6 +2966,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Power
       objectReference: {fileID: 0}
+    - target: {fileID: 6546573808294831678, guid: 02ea9e927aa211844a98e5b68fff0c10, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 02ea9e927aa211844a98e5b68fff0c10, type: 3}
 --- !u!1 &5960472197183669180

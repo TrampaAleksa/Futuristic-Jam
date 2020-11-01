@@ -46,7 +46,7 @@ public class PauseMenu : MonoBehaviour
     public void Restart()
     {
         Scene scene = SceneManager.GetActiveScene(); 
-        SceneManager.LoadScene(scene.name);
+        SceneManager.LoadScene("Final Scene");
     }
 
     public void QuitGame()

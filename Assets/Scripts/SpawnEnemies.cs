@@ -30,6 +30,12 @@ public class SpawnEnemies : MonoBehaviour {
 
 	void MakeThingToSpawn()
 	{
-		GameObject clone = Instantiate(spawnPrefab, transform.position, transform.rotation) as GameObject;
+		number = Random.Range(0, 3);
+		if (number == 0)
+			Instantiate<GameObject>(spawnPrefab, firstSpawn.gameObject.transform.position, transform.rotation);			
+		if (number == 1)
+			Instantiate<GameObject>(spawnPrefab, secondSpawn.gameObject.transform.position, transform.rotation);
+		if (number == 2)
+			Instantiate<GameObject>(spawnPrefab, thirdSpawn.gameObject.transform.position, transform.rotation);
 	}
 }

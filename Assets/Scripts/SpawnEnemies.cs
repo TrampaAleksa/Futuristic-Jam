@@ -8,6 +8,14 @@ public class SpawnEnemies : MonoBehaviour {
 	public float minSecondsBetweenSpawning = 3.0f;
 	public float maxSecondsBetweenSpawning = 6.0f;
 	
+	[SerializeField]
+	GameObject firstSpawn;
+	[SerializeField]
+	GameObject secondSpawn;
+	[SerializeField]
+	GameObject thirdSpawn;
+	private int number;
+	
 	private float timeElapsed;
 	private float timeTillDeploy;
 

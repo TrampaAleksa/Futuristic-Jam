@@ -38,7 +38,7 @@ public class SpawnEnemies : MonoBehaviour {
 
 	void MakeThingToSpawn()
 	{
-		number = Random.Range(0, 3);
+		var number = Random.Range(0, 3);
 		if (number == 0)
 			Instantiate<GameObject>(spawnPrefab, firstSpawn.gameObject.transform.position, transform.rotation);			
 		if (number == 1)

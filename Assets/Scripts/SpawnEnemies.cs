@@ -19,10 +19,6 @@ public class SpawnEnemies : MonoBehaviour {
 	private float timeElapsed;
 	private float timeTillDeploy;
 
-	public GameObject firstSpawn;
-	public GameObject secondSpawn;
-	public GameObject thirdSpawn;
-
 	// Use this for initialization
 	void Start () {
 		timeTillDeploy = Random.Range (minSecondsBetweenSpawning, maxSecondsBetweenSpawning);

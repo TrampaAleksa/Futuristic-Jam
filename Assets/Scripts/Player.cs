@@ -30,7 +30,7 @@ public class Player : MonoBehaviour {
         player.Move(movement);
         if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.Rotate(0, 1 * Input.GetAxis("Horizontal"), 0);
+            transform.Rotate(0, 3 * Input.GetAxis("Horizontal"), 0);
         }
     }
 
@@ -40,67 +40,67 @@ public class Player : MonoBehaviour {
 
         GameObject help = other.gameObject;
         //int index;
-        if (other.gameObject.CompareTag("ms+"))
-        {
-            moveSpeed += bonusMoveSpeed;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("ms-"))
-        {
-            moveSpeed -= bonusMoveSpeed;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("timer+"))
-        {
-            int.TryParse(time.text, out timer);
-            timer += bonusTime;
-            Timer.currentTime = timer;
-            //time.text = timer.ToString("0");
-            Debug.Log("New time " + timer);
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("timer-"))
-        {
-            int.TryParse(time.text, out timer);
-            timer -= bonusTime;
-            Timer.currentTime = timer;
-            Debug.Log("New time " + timer);
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("teleport0+"))
-        {
-            teleports[0] = 1;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("teleport0-"))
-        {
-            teleports[0] = 0;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("teleport1+"))
-        {
-            teleports[1] = 1;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
-        else
-        if (other.gameObject.CompareTag("teleport1-"))
-        {
-            teleports[1] = 0;
-            SpawnPickUps.DestroyFromPlayer(help.gameObject);
-            pickUpPower.Play();
-        }
+        // if (other.gameObject.CompareTag("ms+"))
+        // {
+        //     moveSpeed += bonusMoveSpeed;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("ms-"))
+        // {
+        //     moveSpeed -= bonusMoveSpeed;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("timer+"))
+        // {
+        //     int.TryParse(time.text, out timer);
+        //     timer += bonusTime;
+        //     Timer.currentTime = timer;
+        //     //time.text = timer.ToString("0");
+        //     Debug.Log("New time " + timer);
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("timer-"))
+        // {
+        //     int.TryParse(time.text, out timer);
+        //     timer -= bonusTime;
+        //     Timer.currentTime = timer;
+        //     Debug.Log("New time " + timer);
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("teleport0+"))
+        // {
+        //     teleports[0] = 1;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("teleport0-"))
+        // {
+        //     teleports[0] = 0;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("teleport1+"))
+        // {
+        //     teleports[1] = 1;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
+        // else
+        // if (other.gameObject.CompareTag("teleport1-"))
+        // {
+        //     teleports[1] = 0;
+        //     SpawnPickUps.DestroyFromPlayer(help.gameObject);
+        //     pickUpPower.Play();
+        // }
     }
 }

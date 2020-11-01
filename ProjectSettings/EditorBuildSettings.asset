@@ -9,6 +9,6 @@ EditorBuildSettings:
     path: Assets/Scenes/UIMenu.unity
     guid: 78d30456a2780774b99bac6022177ad9
   - enabled: 1
-    path: Assets/Scenes/Paun.unity
-    guid: f06db0a6c089ce74bbea2cb6084e6b7a
+    path: Assets/Game Jam/Final/Final Scene.unity
+    guid: 4ad916558b2512a4aacb04e9a30812ee
   m_configObjects: {}

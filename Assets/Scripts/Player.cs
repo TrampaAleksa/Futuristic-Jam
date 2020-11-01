@@ -28,7 +28,7 @@ public class Player : MonoBehaviour {
 		player.Move(movement);
 		if(Input.GetAxis("Horizontal") != 0)
         	{
-            	transform.Rotate(0, 1 * Input.GetAxis("Horizontal"), 0);
+            	transform.Rotate(0, 7 * Input.GetAxis("Horizontal"), 0);
         	}
 	}
 

@@ -6,6 +6,8 @@ using UnityEngine;
 
 public class DevicePickup : MonoBehaviour
 {
+    [SerializeField] AudioSource pickUp;
+    [SerializeField] AudioSource drop;
     private static bool isPickedUp;
     [SerializeField] Vector3 sizeOfPickedUpDevice;
     [SerializeField] Vector3 sizeAfterDropping;
@@ -35,6 +37,7 @@ public class DevicePickup : MonoBehaviour
         {
             if (isPickedUp == true && pickedUpDeviceName == gameObject.name)
             {
+                drop.Play();
                 this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
                 this.gameObject.transform.position = new Vector3(gameObject.transform.position.x,
                     vratiDeviceNaVisinu, transform.position.z);
@@ -55,6 +58,7 @@ public class DevicePickup : MonoBehaviour
             print("Click left mouse button to pick device up!");
             if (Input.GetAxis("Fire1") > 0)
             {
+                pickUp.Play();
                 this.gameObject.transform.parent = robot.transform;
                 this.gameObject.transform.position = pickedUpDevice.transform.position;
                 isPickedUp = true;

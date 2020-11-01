@@ -5,6 +5,7 @@ using System;
 
 public class Player : MonoBehaviour {
 
+	public AudioSource pickUpPower;
 	public float moveSpeed = 3.0f;
 	[SerializeField]
 	CharacterController player;
@@ -43,6 +44,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("ms-"))
 		{
@@ -50,6 +52,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("timer+"))
 		{
@@ -59,6 +62,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("timer-"))
 		{
@@ -68,6 +72,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("teleport1+"))
 		{
@@ -75,6 +80,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("teleport1-"))
 		{
@@ -82,6 +88,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("teleport2+"))
 		{
@@ -89,6 +96,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 		if (other.gameObject.CompareTag("teleport2-"))
 		{
@@ -96,6 +104,7 @@ public class Player : MonoBehaviour {
 			index = SpawnPickUps.ReturnIndex(SpawnPickUps.selectedPlaces, help);
 			SpawnPickUps.packages.Remove(help);
 			SpawnPickUps.takenPlaces.Remove(index);
+			pickUpPower.Play();
 		}
 	}
 }

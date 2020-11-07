@@ -11,6 +11,8 @@ TagManager:
   - timer+
   - timer-
   - teleport0+
+  - teleport0
+  - teleport1
   layers:
   - Default
   - TransparentFX
@@ -21,7 +23,7 @@ TagManager:
   - 
   - 
   - Wall
-  - 
+  - Map
   - 
   - 
   - 

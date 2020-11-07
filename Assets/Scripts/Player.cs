@@ -17,7 +17,7 @@ public class Player : MonoBehaviour {
     void Start() {
         player = gameObject.GetComponent<CharacterController>();
         currentTime = time.text;
-        teleport = 0;
+        teleport = 1;
     }
 
 

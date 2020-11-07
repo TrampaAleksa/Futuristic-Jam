@@ -5,7 +5,7 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     GameObject teleport;
-    Teleport teleport0, teleport1;
+    public Teleport teleport0, teleport1;
     //public void EnebleTeleport(int index)
     //{
     //    teleport = GameObject.FindGameObjectWithTag("teleport" + index);

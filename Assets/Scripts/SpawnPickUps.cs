@@ -21,7 +21,7 @@ public class SpawnPickUps : MonoBehaviour
     public GameObject placeholder2;
     public GameObject placeholder3;
     public GameObject placeholder4;
-    public GameObject placeholder5;
+    //public GameObject placeholder5;
     public string tag0;
     public string tag1;
     public string tag2;
@@ -38,7 +38,7 @@ public class SpawnPickUps : MonoBehaviour
         placeHolders.Add(placeholder2);
         placeHolders.Add(placeholder3);
         placeHolders.Add(placeholder4);
-        placeHolders.Add(placeholder5);
+        //placeHolders.Add(placeholder5);
         tags = new List<string>();
         tags.Add(tag0);
         tags.Add(tag1);

@@ -14,19 +14,7 @@ public class SignalLineHolder : MonoBehaviour
         if (Instance == null) Instance = this;
     }
 
-    public void InitLines(SignalDevice device)
-    {
-        if (device.signal.type == SignalType.Bad)
-        {
-            device.signal.line = Instantiate(redLine, transform);
-        }
-        else
-        {
-            device.signal.line = Instantiate(greenLine, transform);
-        }
-    }
-
-    public LineRenderer InitLine(SSignal signal)
+    public LineRenderer InitLine(Signal signal)
     {
         if (signal.type == SignalType.Bad)
         {

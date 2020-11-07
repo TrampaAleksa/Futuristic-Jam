@@ -2,7 +2,7 @@
 
 public class DeviceBroadcasting : DeviceState
 {
-    public DeviceBroadcasting(SDevice device) : base(device)
+    public DeviceBroadcasting(Device device) : base(device)
     {
     }
 

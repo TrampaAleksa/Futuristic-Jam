@@ -11,7 +11,7 @@ public class SFinalDevice : MonoBehaviour
 
     private bool timerActive;
 
-    public void RemoveSignal(SSignal signal)
+    public void RemoveSignal(Signal signal)
     {
         if (signal.type == SignalType.Bad)
         {
@@ -23,7 +23,7 @@ public class SFinalDevice : MonoBehaviour
         }
     }
     
-    public void AddSignal(SSignal signal)
+    public void AddSignal(Signal signal)
     {
         if (signal.type == SignalType.Bad)
         {

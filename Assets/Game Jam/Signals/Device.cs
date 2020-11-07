@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SDevice : MonoBehaviour
+public class Device : MonoBehaviour
 {
     public int connections;
 
     [SerializeField] private List<SignalConnection> sendingTo;
-    [NonSerialized] public List<SSignal> signals;
+    [NonSerialized] public List<Signal> signals;
     [NonSerialized] public DeviceState state;
 
     public SFinalDevice FinalDevice;
@@ -19,17 +19,17 @@ public class SDevice : MonoBehaviour
             FinalDevice = GetComponent<SFinalDevice>();
         }
         
-        signals = new List<SSignal>();
+        signals = new List<Signal>();
 
         foreach (var connection in sendingTo)
         {
-            var signal = new SSignal();
+            var signal = new Signal();
             
             signal.receiver = connection.device;
             signal.sender = this;
             signal.type = connection.type;
             signal.line = FindObjectOfType<SignalLineHolder>().InitLine(signal);
-            signal.state = new SSignalDisconnected(signal);
+            signal.state = new SignalDisconnected(signal);
             signal.range = connection.range;
             signals.Add(signal);
         }
@@ -53,7 +53,13 @@ public class SDevice : MonoBehaviour
 [Serializable]
 public class SignalConnection
 {
-    [SerializeField] public SDevice device;
+    [SerializeField] public Device device;
     [SerializeField] public SignalType type;
     [SerializeField] public float range;
+}
+
+public enum SignalType
+{
+    Bad,
+    Good,
 }

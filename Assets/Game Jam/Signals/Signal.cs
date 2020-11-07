@@ -1,57 +1,61 @@
-﻿
-using System;
-using UnityEngine;
+﻿using UnityEngine;
 
-[Serializable]
 public class Signal
 {
-    public SignalDevice receiver;
+    public Device sender;
+    public Device receiver;
+    public LineRenderer line;
     public SignalType type;
-    [SerializeField] private float range;
+    public RaycastHit hit;
+    public float range;
 
-    [NonSerialized] public SignalDevice broadcaster;
-    [NonSerialized] public RaycastHit hit;
-    [NonSerialized] public LineRenderer line;
+    public bool turnedOn;
 
-    [NonSerialized] public bool isActive;
+    public SignalState state;
 
+    public void Disconnect()
+    {
+        receiver.connections--;
+        if (receiver.connections < 0) receiver.connections = 0;
+        
+        if (receiver.CompareTag("FinalDevice"))
+        {
+            receiver.FinalDevice.RemoveSignal(this);
+        }
+    }
+
+    public void Connect()
+    {
+        receiver.connections++;
+
+        if (receiver.CompareTag("FinalDevice"))
+        {
+            receiver.FinalDevice.AddSignal(this);
+
+        }
+    }
+
+    public bool Interrupted()
+    {
+        var receiverPosition = receiver.transform.position;
+        var broadcasterPosition = sender.transform.position;
+
+        return Physics.Linecast(broadcasterPosition, receiverPosition, out hit, LayerMask.GetMask("Wall"));
+    }
+    
     public float Damperer
     {
         get
         {
-            var deviceDistance = Vector3.Distance(receiver.transform.position, broadcaster.transform.position);
+            var deviceDistance = Vector3.Distance(receiver.transform.position, sender.transform.position);
             return Mathf.InverseLerp(range, 0, deviceDistance);
         }
     }
-
-    public bool InRange { get => Vector3.Distance(receiver.transform.position, broadcaster.transform.position) < range * 0.9f;}
-
-    public bool IsConnected
-    {
-        get
-        {
-            if (!InRange)
-                return false;
-            if (SignalInterrupted(this))
-                return false;
-            if (!isActive)
-                return false;
-            
-            return true;
-        }
-    }
     
-    private bool SignalInterrupted(Signal signal)
+    public bool InRange
     {
-        var receiverPosition = signal.receiver.transform.position;
-        var broadcasterPosition = signal.broadcaster.transform.position;
-        
-        return Physics.Linecast(broadcasterPosition, receiverPosition, out signal.hit, LayerMask.GetMask("Wall"));
+        get => Vector3.Distance(receiver.transform.position, sender.transform.position) < range * 0.9f;
     }
-}
 
-public enum SignalType
-{
-    Bad,
-    Good
+    
 }

@@ -1,9 +1,9 @@
-﻿public class SSignalState
+﻿public class SignalState
 {
     public bool IsConnected { get => signal.turnedOn && !signal.Interrupted() && signal.InRange;}
-    public SSignal signal;
+    public Signal signal;
 
-    public SSignalState(SSignal signal)
+    public SignalState(Signal signal)
     {
         this.signal = signal;
     }

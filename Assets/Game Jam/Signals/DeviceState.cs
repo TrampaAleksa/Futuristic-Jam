@@ -2,9 +2,9 @@
 
 public class DeviceState
 {
-    protected SDevice device;
+    protected Device device;
 
-    public DeviceState(SDevice device)
+    public DeviceState(Device device)
     {
         this.device = device;
     }

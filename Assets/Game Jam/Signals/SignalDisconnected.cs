@@ -1,35 +1,34 @@
-﻿public class SSignalConnected : SSignalState
+﻿public class SignalDisconnected : SignalState
 {
-    public SSignalConnected(SSignal signal) : base(signal)
+    public SignalDisconnected(Signal signal) : base(signal)
     {
     }
 
     public override void Entry()
     {
         base.Entry();
-        signal.Connect();
+        signal.Disconnect();
     }
 
     public override void UpdateAction()
     {
         base.UpdateAction();
-
-        if (!IsConnected)
+        if (IsConnected)
         {
             Exit();
-            return;
         }
 
-        var width = signal.Damperer / 10f;
-        signal.line.endWidth = width;
-        signal.line.startWidth = width;
-
+        if (!signal.InRange)
+        {
+            signal.line.endWidth = 0;
+            signal.line.startWidth = 0;
+        }
+        
         if (signal.Interrupted())
         {
             SignalLineDrawer.WallLineDraw(signal);
             return;
         }
-        
         SignalLineDrawer.ReceiverLineDraw(signal);
 
     }
@@ -37,7 +36,7 @@
     public override void Exit()
     {
         base.Exit();
-        signal.state = new SSignalDisconnected(signal);
+        signal.state = new SignalConnected(signal);
         signal.state.Entry();
     }
 }

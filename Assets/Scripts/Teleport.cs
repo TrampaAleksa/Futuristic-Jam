@@ -6,7 +6,6 @@ using UnityEngine;
 public class Teleport : MonoBehaviour
 {
     public GameObject endingPosition;
-    public GameObject player;
     public Vector3 spawnOffset;
     
     private AudioSource teleportSound;

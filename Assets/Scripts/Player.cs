@@ -7,8 +7,8 @@ public class Player : MonoBehaviour {
 
     public AudioSource pickUpPower;
     public float moveSpeed = 3.0f;
-    [SerializeField]
-    CharacterController player;
+    [NonSerialized]
+    public CharacterController player;
     public float bonusMoveSpeed = 1f;
     public int bonusTime = 5;
     public static int teleport;

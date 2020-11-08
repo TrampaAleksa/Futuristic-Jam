@@ -5,22 +5,44 @@ using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
-    public GameObject endingPosition;
+    public Transform endingPosition;
     public Vector3 spawnOffset;
     
     private AudioSource teleportSound;
+    [SerializeField]private Player player;
+    private bool isPlayerTrigger = false;
 
     private void Awake()
     {
         teleportSound = GetComponent<AudioSource>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E) && isPlayerTrigger)
         {
-            other.gameObject.transform.position = endingPosition.transform.position + spawnOffset;
+            player.player.enabled = false;
+            player.transform.position = endingPosition.transform.position + spawnOffset;
+            var playerEnabled = player.player.enabled = true;
             teleportSound.Play();
+            isPlayerTrigger = false;
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isPlayerTrigger = true;
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isPlayerTrigger = false;
         }
     }
 }

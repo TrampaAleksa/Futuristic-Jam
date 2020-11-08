@@ -20,7 +20,7 @@
             return;
         }
 
-        var width = signal.Damperer / 10f;
+        var width = 0.5f;
         signal.line.endWidth = width;
         signal.line.startWidth = width;
 

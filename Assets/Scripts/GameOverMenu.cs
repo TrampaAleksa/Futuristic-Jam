@@ -29,7 +29,7 @@ public class GameOverMenu : MonoBehaviour
 
     private void Update()
     {
-        print("update");
+        //print("update");
     }
 
     public void Restart()

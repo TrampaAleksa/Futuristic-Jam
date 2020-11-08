@@ -9,7 +9,7 @@ public class Teleport : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
             other.gameObject.transform.position = endingPosition.transform.position;
         }

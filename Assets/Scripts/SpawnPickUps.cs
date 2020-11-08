@@ -21,15 +21,14 @@ public class SpawnPickUps : MonoBehaviour
     public GameObject placeholder2;
     public GameObject placeholder3;
     public GameObject placeholder4;
-    public GameObject placeholder5;
+    //public GameObject placeholder5;
     public string tag0;
     public string tag1;
     public string tag2;
     public string tag3;
     public string tag4;
     public string tag5;
-    public string tag6;
-    public string tag7;
+ 
     private void Awake()
     {
         takenPlaces = new List<int>();
@@ -39,7 +38,7 @@ public class SpawnPickUps : MonoBehaviour
         placeHolders.Add(placeholder2);
         placeHolders.Add(placeholder3);
         placeHolders.Add(placeholder4);
-        placeHolders.Add(placeholder5);
+        //placeHolders.Add(placeholder5);
         tags = new List<string>();
         tags.Add(tag0);
         tags.Add(tag1);
@@ -47,8 +46,7 @@ public class SpawnPickUps : MonoBehaviour
         tags.Add(tag3);
         tags.Add(tag4);
         tags.Add(tag5);
-        tags.Add(tag6);
-        tags.Add(tag7);
+       
         selectedPlaces = new List<Place>();
        
         packages = new List<GameObject>();

@@ -6,12 +6,13 @@ public class Teleport : MonoBehaviour
 {
     public GameObject endingPosition;
     public GameObject player;
+    public Vector3 spawnOffset;
 
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerStay(Collider other)
     {
         if (other.gameObject.CompareTag("Player") && Input.GetKeyDown(KeyCode.E))
         {
-            other.gameObject.transform.position = endingPosition.transform.position;
+            other.gameObject.transform.position = endingPosition.transform.position + spawnOffset;
         }
     }
 }

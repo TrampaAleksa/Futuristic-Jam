@@ -14,6 +14,8 @@ TagManager:
   - teleport0
   - teleport1
   - DeviceInPlace
+  - teleport+
+  - teleport-
   layers:
   - Default
   - TransparentFX

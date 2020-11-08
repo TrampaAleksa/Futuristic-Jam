@@ -1868,6 +1868,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5005410864961976174, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: da90184913617f244938a9c734a8e39a, type: 2}
     - target: {fileID: 6602479261932407096, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_Name
       value: Teleport0
@@ -5627,9 +5631,9 @@ RectTransform:
   m_Father: {fileID: 2100972956}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -737, y: -317}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 223, y: 223}
   m_SizeDelta: {x: 310, y: 310}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1650779316
@@ -5788,6 +5792,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5005410864961976174, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: afd3325ed3c00df418577e0eac6eb167, type: 2}
     - target: {fileID: 6602479261932407096, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_Name
       value: Teleport1
@@ -6508,10 +6516,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -8339,7 +8347,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c839f16460105f24ab706b01f80a4cf6, type: 2}
+  - {fileID: 2100000, guid: 29a44b372d49e5e41bd06fc5ed71aa88, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

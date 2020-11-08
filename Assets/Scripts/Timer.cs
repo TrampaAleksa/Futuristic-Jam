@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -7,7 +8,7 @@ public class Timer : MonoBehaviour
 {
     static public float currentTime = 0;
     public float startingTime = 10;
-    public Text timer;
+    public TextMeshProUGUI timer;
     void Start()
     {
         currentTime = startingTime;

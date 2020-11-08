@@ -7,19 +7,15 @@ public class Player : MonoBehaviour {
 
     public AudioSource pickUpPower;
     public float moveSpeed = 3.0f;
-    [SerializeField]
-    CharacterController player;
-    public Text time;
-    string currentTime;
+    [NonSerialized]
+    public CharacterController player;
     public float bonusMoveSpeed = 1f;
     public int bonusTime = 5;
     public static int teleport;
     void Start() {
         player = gameObject.GetComponent<CharacterController>();
-        currentTime = time.text;
         teleport = 1;
     }
-
 
     void Update()
     {
@@ -34,7 +30,6 @@ public class Player : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        int timer;
 
         GameObject help = other.gameObject;
       
@@ -54,21 +49,17 @@ public class Player : MonoBehaviour {
         else
         if (other.gameObject.CompareTag("timer+"))
         {
-            int.TryParse(time.text, out timer);
-            timer += bonusTime;
-            Timer.currentTime = timer;
+            Timer.currentTime += bonusTime;
             //time.text = timer.ToString("0");
-            Debug.Log("New time " + timer);
+            Debug.Log("New time " + Timer.currentTime);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
         else
         if (other.gameObject.CompareTag("timer-"))
         {
-            int.TryParse(time.text, out timer);
-            timer -= bonusTime;
-            Timer.currentTime = timer;
-            Debug.Log("New time " + timer);
+            Timer.currentTime -= bonusTime;
+            Debug.Log("New time " + Timer.currentTime);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }

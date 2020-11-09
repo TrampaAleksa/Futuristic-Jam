@@ -40,11 +40,12 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
         Time.timeScale = 1f;
-        SceneManager.LoadScene("UIMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
     
     public void Restart()
     {
+        Time.timeScale = 1f;
         Scene scene = SceneManager.GetActiveScene(); 
         SceneManager.LoadScene("Final Scene");
     }

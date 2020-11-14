@@ -48,7 +48,9 @@ public class Signal
         get
         {
             var deviceDistance = Vector3.Distance(receiver.transform.position, sender.transform.position);
-            return Mathf.InverseLerp(range, 0, deviceDistance);
+            var inverseLerp = Mathf.InverseLerp(range, 0, deviceDistance);
+            inverseLerp = Mathf.Clamp(inverseLerp, 0, 0.5f);
+            return inverseLerp;
         }
     }
     

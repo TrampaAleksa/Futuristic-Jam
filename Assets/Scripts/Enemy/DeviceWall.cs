@@ -4,36 +4,77 @@ using UnityEngine;
 
 public class DeviceWall : MonoBehaviour
 {
-    [SerializeField]
-    GameObject device;
-    Vector3 startingPosition;
+    //[SerializeField]
+    public GameObject device;
+    public Vector3 startingPosition;
     [SerializeField]
     float speedOfRasingWall = 0.025f;
-    bool startedRasingWall = false;
+    public bool startedRasingWall = false;
+    //Enemy enemy;
+    GameObject enemy;
+    public bool start = false;
+    public bool canGoUp = false;
+    bool deviceAbove0 = false;
+    bool playerFirst = false;
     void Start()
     {
         startingPosition = device.transform.position;
     }
-
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (device.transform.localPosition.y < 0f)
+        if(canGoUp)
+            device.transform.Translate(Vector3.up * speedOfRasingWall * Time.deltaTime);
+        //if (device.transform.localPosition.y > 0f && deviceAbove0 == false)
+        //  deviceAbove0 = true;
+        if (startedRasingWall && start)
         {
-             if (other.gameObject.tag == "Enemy")
+            if (device.transform.localPosition.y > 0f)
             {
-                device.transform.Translate(Vector3.up * speedOfRasingWall);
-                startedRasingWall = true;
+                startedRasingWall = false;
+                enemy.GetComponent<BoxCollider>().enabled = false;
+                gameObject.tag = "Finish";
+                enemy.GetComponent<Enemy>().enabled = false;
+                start = false;
+                enemy.GetComponent<Enemy>().DisableEnemy();
+                canGoUp = false;
+                deviceAbove0 = false;
             }
-            else if(startedRasingWall)
+            else if (playerFirst)
             {
                 device.transform.position = startingPosition;
                 startedRasingWall = false;
+                canGoUp = false;
+                start = false;
+                try
+                {
+                    enemy.GetComponent<Enemy>().DisableEnemy();
+                }
+                catch { }
+                playerFirst = false;
             }
         }
-        else startedRasingWall = false;
-
     }
-
-
-
+    private void OnTriggerEnter(Collider other)
+    {       
+       // if (device.transform.localPosition.y < 0f)
+       // {
+            if (other.gameObject.tag == "Enemy")
+            {
+                if (!start) {
+                    enemy = other.gameObject;
+                    if (gameObject == enemy.GetComponent<Enemy>().target)
+                        start = true;
+                }
+                if (start)
+                {
+                    canGoUp = true;
+                    startedRasingWall = true;
+                }
+            }
+        if (startedRasingWall && other.gameObject.tag == "Player")
+        {
+            playerFirst = true;
+        }
+    }
+      
 }

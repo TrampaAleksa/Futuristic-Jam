@@ -38,7 +38,7 @@ public class DevicePickup : MonoBehaviour
             if (isPickedUp == true && pickedUpDeviceName == gameObject.name)
             {
                 drop.Play();
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                this.gameObject.transform.rotation = Quaternion.Euler(-105, 0, -90);
                 this.gameObject.transform.position = new Vector3(gameObject.transform.position.x,
                     vratiDeviceNaVisinu, transform.position.z);
               
@@ -66,7 +66,7 @@ public class DevicePickup : MonoBehaviour
                 // pokupljen device iznad glave               
              
                 // transform.localScale = sizeOfPickedUpDevice;
-                this.gameObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+                this.gameObject.transform.rotation = Quaternion.Euler(-105, 0, -90);
                 this.gameObject.GetComponent<Collider>().enabled = false;
 
                 pickedUpDeviceName = gameObject.name;

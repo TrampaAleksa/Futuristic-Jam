@@ -12,6 +12,8 @@ public class DeviceWallDown : MonoBehaviour
     [SerializeField]
     float timesSlowerMovingWall = 5;
     bool startedRasingWall = false;
+    [SerializeField]
+    float positionForActiveSignal = -0.9f;
 
 
 
@@ -24,8 +26,8 @@ public class DeviceWallDown : MonoBehaviour
     {
         if(device.transform.localPosition.y >= -2.63 && other.gameObject.tag == "Player")
         {
-            device.transform.Translate(Vector3.down * speedOfRasingWall / timesSlowerMovingWall);
-            if (device.transform.localPosition.y < -0.78)
+            device.transform.Translate(Vector3.down * speedOfRasingWall / timesSlowerMovingWall * Time.deltaTime);
+            if (device.transform.localPosition.y < positionForActiveSignal)
                 gameObject.tag = "DeviceInPlace";
         }      
     }

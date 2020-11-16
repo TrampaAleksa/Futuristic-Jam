@@ -18,6 +18,10 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField]
     int maxEnemies;
     private int number;
+    bool deviceNotBeChased = false;
+    static public int numberOfEnemies = 0;
+    int numberOfAvalibaleDevices = 0;
+    DeviceWall[] deviceWall;
 
     private float timeElapsed;
     private float timeTillDeploy;
@@ -33,15 +37,17 @@ public class SpawnEnemies : MonoBehaviour
     {
         if (FindObjectsOfType<Enemy>().Length < maxEnemies)
         {
-            timeElapsed += Time.deltaTime;
-            if (timeTillDeploy < timeElapsed)
+
+            if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true)
             {
-                if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0)
+                timeElapsed += Time.deltaTime;
+                if (timeTillDeploy < timeElapsed)
                 {
                     MakeThingToSpawn();
                     timeTillDeploy = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
                     timeElapsed = 0;
                 }
+            
             }
         }
     }
@@ -55,5 +61,26 @@ public class SpawnEnemies : MonoBehaviour
             Instantiate<GameObject>(spawnPrefab, secondSpawn.gameObject.transform.position, transform.rotation);
         if (number == 2)
             Instantiate<GameObject>(spawnPrefab, thirdSpawn.gameObject.transform.position, transform.rotation);
+        numberOfEnemies++;
+    }
+    bool DeviceNotBeChased()
+    {
+        if (FindObjectsOfType<DeviceWall>().Length - numberOfEnemies > 0)
+        {
+            deviceWall = FindObjectsOfType<DeviceWall>();
+            foreach (DeviceWall device in deviceWall)
+            {
+                //deviceNotBeChased = false;
+                if (device.comingToThisOne == false)
+                {
+                    numberOfAvalibaleDevices++;
+                    //deviceNotBeChased = true;           
+                }
+            }
+            if (numberOfAvalibaleDevices - numberOfEnemies > 0)
+                return true;
+            return false;
+        }
+        return false;
     }
 }

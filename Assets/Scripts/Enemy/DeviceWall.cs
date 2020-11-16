@@ -16,6 +16,7 @@ public class DeviceWall : MonoBehaviour
     public bool canGoUp = false;
     bool deviceAbove0 = false;
     bool playerFirst = false;
+    public bool comingToThisOne = false;
     void Start()
     {
         startingPosition = device.transform.position;
@@ -45,6 +46,7 @@ public class DeviceWall : MonoBehaviour
                 startedRasingWall = false;
                 canGoUp = false;
                 start = false;
+                comingToThisOne = false;
                 try
                 {
                     enemy.GetComponent<Enemy>().DisableEnemy();

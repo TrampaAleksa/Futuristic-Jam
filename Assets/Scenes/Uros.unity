@@ -3067,15 +3067,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.6
+      value: 10.24
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.476
+      value: 30.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -35.1
+      value: -34.05
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalRotation.x
@@ -3403,12 +3403,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4173343174090075418, guid: c706830bc5807bf48a2b527bf0dd5a70, type: 3}
-  minSecondsBetweenSpawning: 3
-  maxSecondsBetweenSpawning: 6
+  minSecondsBetweenSpawning: 1
+  maxSecondsBetweenSpawning: 2
   firstSpawn: {fileID: 1089390853}
   secondSpawn: {fileID: 1151784285}
   thirdSpawn: {fileID: 624758946}
-  maxEnemies: 3
+  maxEnemies: 5
 --- !u!4 &777296737
 Transform:
   m_ObjectHideFlags: 0
@@ -4073,6 +4073,7 @@ MonoBehaviour:
   startedRasingWall: 0
   start: 0
   canGoUp: 0
+  comingToThisOne: 0
 --- !u!114 &1018839444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4275,7 +4276,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1089390853}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.22, y: 0, z: 10.68}
+  m_LocalPosition: {x: -7.2, y: 0, z: 10.68}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 777296737}
@@ -4752,7 +4753,7 @@ MonoBehaviour:
   device: {fileID: 329509268}
   speedOfRasingWall: 0.6
   timesSlowerMovingWall: 5
-  positionForActiveSignal: 0
+  positionForActiveSignal: -0.9
 --- !u!114 &1263207217
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4771,6 +4772,7 @@ MonoBehaviour:
   startedRasingWall: 0
   start: 0
   canGoUp: 0
+  comingToThisOne: 0
 --- !u!1 &1271836948
 GameObject:
   m_ObjectHideFlags: 0
@@ -8741,6 +8743,7 @@ GameObject:
   - component: {fileID: 4210138880989027927}
   - component: {fileID: 2176309927941231826}
   - component: {fileID: 8626577852454850439}
+  - component: {fileID: 3681804332670276271}
   m_Layer: 9
   m_Name: Cone007
   m_TagString: Untagged
@@ -8748,6 +8751,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
   m_IsActive: 1
+--- !u!65 &3681804332670276271
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3681804332670276270}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 0
+  serializedVersion: 2
+  m_Size: {x: 2.1205313, y: 2.120373, z: 0.21041714}
+  m_Center: {x: -0.0014947891, y: 0.009845544, z: 0.16814011}
 --- !u!4 &3847980224476791328
 Transform:
   m_ObjectHideFlags: 0

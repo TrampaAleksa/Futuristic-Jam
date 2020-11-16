@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     Enemy enemy;
     GameObject deviceReference;
     DeviceWall deviceWall;
+    float elapsedTime = 0;
+    
+    
     void Start()
     {
         deviceWall = GetComponent<DeviceWall>();
@@ -28,7 +31,10 @@ public class Enemy : MonoBehaviour
         timer = gameObject.AddComponent<TimedAction>();
         boxCollider = GetComponent<BoxCollider>();
         target = FindDeviceToChase();
-        if (target == null) return;
+        if (target == null)
+        {
+            return;
+        }
         animatior.SetBool("IsMoving", true);
         navMeshAGent = this.GetComponent<NavMeshAgent>();
         SetDestination(target.transform);
@@ -49,11 +55,16 @@ public class Enemy : MonoBehaviour
         }
         catch (NullReferenceException ex)
         {
-            enemy.enabled = false;
-            //animatior.SetBool("IsMoving", false);
-            animatior.SetBool("IsDestroy", true);
-            boxCollider.enabled = false;
-            timer.StartTimedAction(DestroyCrab, 2f);
+            //elapsedTime = Time.deltaTime;
+            //if (elapsedTime > 0.5f)
+            //{
+                enemy.enabled = false;
+                //animatior.SetBool("IsMoving", false);
+                animatior.SetBool("IsDestroy", true);
+                boxCollider.enabled = false;
+                timer.StartTimedAction(DestroyCrab, 2f);
+           // }
+            elapsedTime = 0;
         }
        
     }
@@ -75,7 +86,7 @@ public class Enemy : MonoBehaviour
         {
             Vector3 targerVector = destination.position;
             navMeshAGent.SetDestination(targerVector);
-        }
+        }    
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -88,7 +99,7 @@ public class Enemy : MonoBehaviour
                 // if (collision.gameObject.CompareTag("DeviceInPlace"))
                 // {
                 deviceWall.device.transform.position = deviceWall.startingPosition;
-                deviceWall.canGoUp = false;
+                deviceWall.canGoUp = false;                
                 deviceWall.startedRasingWall = false;
                 deviceWall.start = false;
             }
@@ -100,6 +111,7 @@ public class Enemy : MonoBehaviour
             boxCollider.enabled = false;
             timer.StartTimedAction(DestroyCrab, 2f);
             */
+            target.GetComponent<DeviceWall>().comingToThisOne = false;
             DisableEnemy();
             
         }
@@ -130,12 +142,89 @@ public class Enemy : MonoBehaviour
     public GameObject FindDeviceToChase()
     {
         GameObject[] placedDevices = GameObject.FindGameObjectsWithTag("DeviceInPlace");
+        
+        int i = 0;
+        int brojac, m =0;
 
         if (placedDevices.Length != 0)
         {
+            
+            for (int j = 0; j < placedDevices.Length; j++)
+            {
+                if (placedDevices[j].GetComponent<DeviceWall>().comingToThisOne == false)
+                {
+                    m++;
+                }
+                
+            }
+            if (m == 0)
+            {
+                return null;
+            }
+            GameObject[] devicesNotChased = new GameObject[m];
+            for (int j = 0; j < placedDevices.Length; j++)
+            {
+                if (placedDevices[j].GetComponent<DeviceWall>().comingToThisOne == false)
+                {
+                    devicesNotChased[i++] = placedDevices[j];
+                }
+            }
+
+            /*
+            foreach(GameObject oneDeviceNotChased in placedDevices)
+            {
+                try
+                {
+                    if (oneDeviceNotChased.GetComponent<DeviceWall>().comingToThisOne == false)
+                        devicesNotChased[i++] = oneDeviceNotChased;
+                }catch(Exception e)
+                {
+                    print("greska");
+                    return null;
+                }
+            }
+            */
+           // print(m);
+            brojac = UnityEngine.Random.Range(0, m);
+           // print(devicesNotChased[brojac].name);
+            GameObject pickedDevice = devicesNotChased[brojac];
+            //print(devicesNotChased[brojac].name);
+            pickedDevice.GetComponent<DeviceWall>().comingToThisOne = true;
+            //SpawnEnemies.numberOfEnemies++;
+            //print(pickedDevice.name);
+            return pickedDevice;
+            /*
+             
             int brojac = UnityEngine.Random.Range(0, placedDevices.Length);
             GameObject randomDevice = placedDevices[brojac];
-            return randomDevice;
+            */
+
+
+            /*
+            while(randomDevice.GetComponent<DeviceWall>().comingToThisOne == false)
+            {
+                brojac = UnityEngine.Random.Range(0, placedDevices.Length);
+                randomDevice = placedDevices[brojac];
+            }
+            */
+
+            /*
+            for(int i = 0; i < placedDevices.Length; i++)
+            {
+                if (randomDevice.GetComponent<DeviceWall>().comingToThisOne == false)
+                    return randomDevice;
+            }
+            return null;
+            */
+
+            /*
+            if (randomDevice.GetComponent<DeviceWall>().comingToThisOne == false)
+            {
+                randomDevice.GetComponent<DeviceWall>().comingToThisOne = true;
+                return randomDevice;
+            }
+            else
+            */
         }
         else return null;
     }
@@ -153,5 +242,6 @@ public class Enemy : MonoBehaviour
         boxCollider.enabled = false;
         timer.StartTimedAction(DestroyCrab, 2.9f);
         enemy.enabled = false;
+        SpawnEnemies.numberOfEnemies--;
     }
 }

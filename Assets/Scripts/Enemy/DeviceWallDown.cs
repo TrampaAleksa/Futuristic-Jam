@@ -28,7 +28,10 @@ public class DeviceWallDown : MonoBehaviour
         {
             device.transform.Translate(Vector3.down * speedOfRasingWall / timesSlowerMovingWall * Time.deltaTime);
             if (device.transform.localPosition.y < positionForActiveSignal)
+            {
                 gameObject.tag = "DeviceInPlace";
+                gameObject.GetComponent<DeviceWall>().comingToThisOne = false;
+            }
         }      
     }
 }

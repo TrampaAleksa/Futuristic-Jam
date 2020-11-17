@@ -8,7 +8,6 @@ public class Timer : MonoBehaviour
 {
     static public float currentTime = 0;
     public float startingTime = 10;
-    public TextMeshProUGUI timer;
     void Start()
     {
         currentTime = startingTime;
@@ -18,7 +17,7 @@ public class Timer : MonoBehaviour
     void Update()
     {
         currentTime -= 1 * Time.deltaTime;
-        timer.text = currentTime.ToString("0");
+        EnergyBarController.Instance.SetTime(currentTime);
         if (currentTime <= 0)
         {
             currentTime = 0;

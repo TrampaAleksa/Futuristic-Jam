@@ -1,25 +1,22 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using UnityEngine.VFX;
 
 public class SpawnEnemies : MonoBehaviour
 {
-    [SerializeField]
-    GameObject spawnPrefab;
-    [SerializeField]
-    float minSecondsBetweenSpawning = 3.0f;
-    [SerializeField]
-    float maxSecondsBetweenSpawning = 6.0f;
-    [SerializeField]
-    GameObject firstSpawn;
-    [SerializeField]
-    GameObject secondSpawn;
-    [SerializeField]
-    GameObject thirdSpawn;
-    [SerializeField]
-    int maxEnemies;
+    [SerializeField] GameObject spawnPrefab;
+    [SerializeField] float minSecondsBetweenSpawning = 3.0f;
+    [SerializeField] float maxSecondsBetweenSpawning = 6.0f;
+    [SerializeField] GameObject firstSpawn;
+    [SerializeField] GameObject secondSpawn;
+    [SerializeField] GameObject thirdSpawn;
+    [SerializeField] int maxEnemies;
+
     private int number;
+
     //bool deviceNotBeChased = false;
-    static public int numberOfEnemies = 0;
+    static public int numberOfActiveEnemies = 0;
     int numberOfAvalibaleDevices = 0;
     DeviceWall[] deviceWall;
 
@@ -35,21 +32,20 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-            timeElapsed += Time.deltaTime;
-            if (timeTillDeploy < timeElapsed)
+        timeElapsed += Time.deltaTime;
+        if (timeTillDeploy < timeElapsed)
+        {
+            if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true
+                                                                              && numberOfActiveEnemies < maxEnemies)
             {
-                if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true 
-                && FindObjectsOfType<Enemy>().Length < maxEnemies)
-                {
-                    MakeThingToSpawn();
-                    timeTillDeploy = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
-                    timeElapsed = 0;
-
-                }
-                else timeElapsed = 0;
-            
-            }      
+                MakeThingToSpawn();
+                timeTillDeploy = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
+                timeElapsed = 0;
+            }
+            else timeElapsed = 0;
+        }
     }
+
     void MakeThingToSpawn()
     {
         number = Random.Range(0, 3);
@@ -59,24 +55,23 @@ public class SpawnEnemies : MonoBehaviour
             Instantiate<GameObject>(spawnPrefab, secondSpawn.gameObject.transform.position, transform.rotation);
         if (number == 2)
             Instantiate<GameObject>(spawnPrefab, thirdSpawn.gameObject.transform.position, transform.rotation);
-        numberOfEnemies++;
+        numberOfActiveEnemies++;
     }
+
     bool DeviceNotBeChased()
     {
-        if(GameObject.FindGameObjectsWithTag("DeviceInPlace").Length - numberOfEnemies > 0)
+        deviceWall = FindObjectsOfType<DeviceWall>();
+        numberOfAvalibaleDevices = deviceWall.Length;
+        foreach (DeviceWall device in deviceWall)
         {
-            deviceWall = FindObjectsOfType<DeviceWall>();
-            foreach (DeviceWall device in deviceWall)
+            if (device.comingToThisOne)
             {
-                if (device.comingToThisOne == false)
-                {
-                    numberOfAvalibaleDevices++;       
-                }
+                numberOfAvalibaleDevices--;
             }
-            if (numberOfAvalibaleDevices - numberOfEnemies > 0)
-                return true;
-            return false;
         }
+
+        if (numberOfAvalibaleDevices > 0)
+            return true;
         return false;
     }
 }

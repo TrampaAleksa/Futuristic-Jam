@@ -121,7 +121,7 @@ public class Enemy : MonoBehaviour
     }
    public void DisableEnemy()
     {
-        SpawnEnemies.numberOfEnemies--;
+        SpawnEnemies.numberOfActiveEnemies--;
         SetDestination(gameObject.transform);
         animatior.SetBool("IsDestroy", true);
         boxCollider.enabled = false;

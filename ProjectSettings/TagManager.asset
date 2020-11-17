@@ -16,6 +16,7 @@ TagManager:
   - DeviceInPlace
   - teleport+
   - teleport-
+  - Enemy
   layers:
   - Default
   - TransparentFX

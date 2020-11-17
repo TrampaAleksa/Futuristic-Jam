@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -5,32 +6,41 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] GameObject explosion;
-    [SerializeField] GameObject spawnObsticleForDevice;
     Transform destination;
-    [SerializeField] float speed = 2f;
-    private int numberOfActiveDevices;
-    GameObject target;
-    [SerializeField] float timeTillDestroy;
+    //[SerializeField] float speed = 2f;
+    public GameObject target;
     NavMeshAgent navMeshAGent;
-
+    [SerializeField]
+    Animator animatior;
+    BoxCollider boxCollider;
+    public bool destroy = false;
+    TimedAction timer;
+    Enemy enemy;
+    DeviceWall deviceWall;
     void Start()
     {
+        deviceWall = GetComponent<DeviceWall>();
+        enemy = GetComponent<Enemy>();
+        timer = gameObject.AddComponent<TimedAction>();
+        boxCollider = GetComponent<BoxCollider>();
         target = FindDeviceToChase();
-
         if (target == null) return;
-
         navMeshAGent = this.GetComponent<NavMeshAgent>();
         SetDestination(target.transform);
     }
 
     void Update()
     {
-        if (target.gameObject.CompareTag("DeviceInPlace")) return;
-
-        ChaseNewTarget();
+        try
+        {
+            if (target.gameObject.CompareTag("DeviceInPlace")) return;
+            ChaseNewTarget();
+        }
+        catch (NullReferenceException ex)
+        {
+            DisableEnemy();
+        }    
     }
-
     private void ChaseNewTarget()
     {
         target = FindDeviceToChase();
@@ -38,56 +48,84 @@ public class Enemy : MonoBehaviour
         {
             SetDestination(target.transform);
         }
-        else
-        {
-            Destroy(gameObject);
-            //Instantiate<GameObject>(explosion, gameObject.transform.position, Quaternion.identity);
-        }
     }
 
     private void SetDestination(Transform newDestination)
     {
-        destination = newDestination;
-        
+        destination = newDestination;       
         if (destination != null)
         {
             Vector3 targerVector = destination.position;
             navMeshAGent.SetDestination(targerVector);
-        }
+        }    
     }
-
-    private void OnCollisionStay(Collision collision)
+    private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            //Instantiate<GameObject>(explosion, gameObject.transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            if (target.GetComponent<DeviceWall>().startedRasingWall)
+            {
+                deviceWall = target.GetComponent<DeviceWall>();
+                deviceWall.device.transform.position = deviceWall.startingPosition;
+                deviceWall.DestroyingEnemy();
+            }
+            target.GetComponent<DeviceWall>().comingToThisOne = false;
+            DisableEnemy();           
         }
 
-        if (collision.gameObject.CompareTag("DeviceInPlace"))
-        {
-            gameObject.AddComponent<TimedAction>().StartTimedAction(DisableDevice, timeTillDestroy);
-        }
     }
-
-    private void DisableDevice()
+    private void OnTriggerEnter(Collider other)
     {
-        //Instantiate<GameObject>(explosion, gameObject.transform.position, Quaternion.identity);
-        Instantiate<GameObject>(spawnObsticleForDevice, target.transform.position, Quaternion.identity);
-        target.gameObject.tag = "Finish";
-        Destroy(gameObject);
+        if (other.gameObject.CompareTag("DeviceInPlace") && other.gameObject == target)
+        {
+            animatior.SetBool("IsStanding", true);
+            navMeshAGent.SetDestination(gameObject.transform.position);       
+        }
     }
-
     public GameObject FindDeviceToChase()
     {
-        GameObject[] placedDevices = GameObject.FindGameObjectsWithTag("DeviceInPlace");
-
+        GameObject[] placedDevices = GameObject.FindGameObjectsWithTag("DeviceInPlace");      
+        int i = 0;
+        int brojac, m =0;
         if (placedDevices.Length != 0)
-        {
-            int brojac = Random.Range(0, placedDevices.Length);
-            GameObject randomDevice = placedDevices[brojac];
-            return randomDevice;
+        {           
+            for (int j = 0; j < placedDevices.Length; j++)
+            {
+                if (placedDevices[j].GetComponent<DeviceWall>().comingToThisOne == false)
+                {
+                    m++;
+                }              
+            }
+            if (m == 0)
+            {
+                return null;
+            }
+            GameObject[] devicesNotChased = new GameObject[m];
+            for (int j = 0; j < placedDevices.Length; j++)
+            {
+                if (placedDevices[j].GetComponent<DeviceWall>().comingToThisOne == false)
+                {
+                    devicesNotChased[i++] = placedDevices[j];
+                }
+            }
+            brojac = UnityEngine.Random.Range(0, m);
+            GameObject pickedDevice = devicesNotChased[brojac];
+            pickedDevice.GetComponent<DeviceWall>().comingToThisOne = true;
+            return pickedDevice;
         }
         else return null;
+    }
+    public void DestroyCrab()
+    {
+        Destroy(gameObject);
+    }
+   public void DisableEnemy()
+    {
+        SpawnEnemies.numberOfEnemies--;
+        SetDestination(gameObject.transform);
+        animatior.SetBool("IsDestroy", true);
+        boxCollider.enabled = false;
+        timer.StartTimedAction(DestroyCrab, 2.9f);
+        enemy.enabled = false;   
     }
 }

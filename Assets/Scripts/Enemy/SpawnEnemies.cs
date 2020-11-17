@@ -18,6 +18,10 @@ public class SpawnEnemies : MonoBehaviour
     [SerializeField]
     int maxEnemies;
     private int number;
+    //bool deviceNotBeChased = false;
+    static public int numberOfEnemies = 0;
+    int numberOfAvalibaleDevices = 0;
+    DeviceWall[] deviceWall;
 
     private float timeElapsed;
     private float timeTillDeploy;
@@ -31,21 +35,21 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FindObjectsOfType<Enemy>().Length < maxEnemies)
-        {
             timeElapsed += Time.deltaTime;
             if (timeTillDeploy < timeElapsed)
             {
-                if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0)
+                if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true 
+                && FindObjectsOfType<Enemy>().Length < maxEnemies)
                 {
                     MakeThingToSpawn();
                     timeTillDeploy = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
                     timeElapsed = 0;
-                }
-            }
-        }
-    }
 
+                }
+                else timeElapsed = 0;
+            
+            }      
+    }
     void MakeThingToSpawn()
     {
         number = Random.Range(0, 3);
@@ -55,5 +59,24 @@ public class SpawnEnemies : MonoBehaviour
             Instantiate<GameObject>(spawnPrefab, secondSpawn.gameObject.transform.position, transform.rotation);
         if (number == 2)
             Instantiate<GameObject>(spawnPrefab, thirdSpawn.gameObject.transform.position, transform.rotation);
+        numberOfEnemies++;
+    }
+    bool DeviceNotBeChased()
+    {
+        if(GameObject.FindGameObjectsWithTag("DeviceInPlace").Length - numberOfEnemies > 0)
+        {
+            deviceWall = FindObjectsOfType<DeviceWall>();
+            foreach (DeviceWall device in deviceWall)
+            {
+                if (device.comingToThisOne == false)
+                {
+                    numberOfAvalibaleDevices++;       
+                }
+            }
+            if (numberOfAvalibaleDevices - numberOfEnemies > 0)
+                return true;
+            return false;
+        }
+        return false;
     }
 }

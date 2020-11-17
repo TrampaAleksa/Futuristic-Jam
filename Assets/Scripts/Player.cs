@@ -7,6 +7,7 @@ public class Player : MonoBehaviour {
 
     public AudioSource pickUpPower;
     public float moveSpeed = 3.0f;
+    public float rotationSpeed = 1f;
     [NonSerialized]
     public CharacterController player;
     public float bonusMoveSpeed = 1f;
@@ -19,12 +20,12 @@ public class Player : MonoBehaviour {
 
     void Update()
     {
-        Vector3 movementZ = Input.GetAxis("Vertical") * Vector3.forward * moveSpeed * Time.deltaTime;
+        Vector3 movementZ = Vector3.forward * (Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
         Vector3 movement = transform.TransformDirection(movementZ);
         player.Move(movement);
         if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.Rotate(0, 3 * Input.GetAxis("Horizontal"), 0);
+            transform.Rotate(0, rotationSpeed * Input.GetAxis("Horizontal"), 0);
         }
     }
 

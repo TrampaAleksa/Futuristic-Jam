@@ -3403,8 +3403,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4173343174090075418, guid: c706830bc5807bf48a2b527bf0dd5a70, type: 3}
-  minSecondsBetweenSpawning: 1
-  maxSecondsBetweenSpawning: 2
+  minSecondsBetweenSpawning: 2
+  maxSecondsBetweenSpawning: 4
   firstSpawn: {fileID: 1089390853}
   secondSpawn: {fileID: 1151784285}
   thirdSpawn: {fileID: 624758946}
@@ -4087,9 +4087,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   device: {fileID: 832766542}
-  speedOfRasingWall: 0.6
   timesSlowerMovingWall: 5
-  positionForActiveSignal: 0
+  positionForActiveSignal: -0.9
 --- !u!1 &1028511063
 GameObject:
   m_ObjectHideFlags: 0
@@ -4751,7 +4750,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   device: {fileID: 329509268}
-  speedOfRasingWall: 0.6
   timesSlowerMovingWall: 5
   positionForActiveSignal: -0.9
 --- !u!114 &1263207217

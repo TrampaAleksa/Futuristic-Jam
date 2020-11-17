@@ -6,32 +6,30 @@ public class DeviceWallDown : MonoBehaviour
 {
     [SerializeField]
     GameObject device;
-    Vector3 startingPosition;
-    [SerializeField]
-    float speedOfRasingWall = 0.025f;
     [SerializeField]
     float timesSlowerMovingWall = 5;
-    bool startedRasingWall = false;
     [SerializeField]
     float positionForActiveSignal = -0.9f;
-
-
+    float sppedOfGoingUp;
+    DeviceWall deviceWall;
 
     void Start()
     {
-        startingPosition = device.transform.position;
+        deviceWall = GetComponent<DeviceWall>();
+        sppedOfGoingUp = GetComponent<DeviceWall>().speedOfRasingWall;
     }
 
     private void OnTriggerStay(Collider other)
     {
         if(device.transform.localPosition.y >= -2.63 && other.gameObject.tag == "Player")
         {
-            device.transform.Translate(Vector3.down * speedOfRasingWall / timesSlowerMovingWall * Time.deltaTime);
+            device.transform.Translate(Vector3.down * sppedOfGoingUp / timesSlowerMovingWall * Time.deltaTime);
             if (device.transform.localPosition.y < positionForActiveSignal)
             {
                 gameObject.tag = "DeviceInPlace";
-                gameObject.GetComponent<DeviceWall>().comingToThisOne = false;
+                deviceWall.comingToThisOne = false;
             }
-        }      
+        }
     }
+    
 }

@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class DeviceWall : MonoBehaviour
 {
-    //[SerializeField]
     public GameObject device;
     public Vector3 startingPosition;
-    [SerializeField]
-    float speedOfRasingWall = 0.025f;
+    public float speedOfRasingWall = 0.025f;
+    [HideInInspector]
     public bool startedRasingWall = false;
-    //Enemy enemy;
     GameObject enemy;
+    [HideInInspector]
     public bool start = false;
+    [HideInInspector]
     public bool canGoUp = false;
-    bool deviceAbove0 = false;
     bool playerFirst = false;
+    [HideInInspector]
     public bool comingToThisOne = false;
     void Start()
     {
@@ -25,27 +25,19 @@ public class DeviceWall : MonoBehaviour
     {
         if(canGoUp)
             device.transform.Translate(Vector3.up * speedOfRasingWall * Time.deltaTime);
-        //if (device.transform.localPosition.y > 0f && deviceAbove0 == false)
-        //  deviceAbove0 = true;
         if (startedRasingWall && start)
         {
             if (device.transform.localPosition.y > 0f)
             {
-                startedRasingWall = false;
-                enemy.GetComponent<BoxCollider>().enabled = false;
                 gameObject.tag = "Finish";
-                enemy.GetComponent<Enemy>().enabled = false;
-                start = false;
+                DestroyingEnemy();
                 enemy.GetComponent<Enemy>().DisableEnemy();
-                canGoUp = false;
-                deviceAbove0 = false;
+                
             }
             else if (playerFirst)
             {
                 device.transform.position = startingPosition;
-                startedRasingWall = false;
-                canGoUp = false;
-                start = false;
+                DestroyingEnemy();
                 comingToThisOne = false;
                 try
                 {
@@ -58,25 +50,28 @@ public class DeviceWall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {       
-       // if (device.transform.localPosition.y < 0f)
-       // {
-            if (other.gameObject.tag == "Enemy")
-            {
-                if (!start) {
-                    enemy = other.gameObject;
-                    if (gameObject == enemy.GetComponent<Enemy>().target)
+         if (other.gameObject.tag == "Enemy")
+         {
+             if (!start) {
+                  enemy = other.gameObject;
+                  if (gameObject == enemy.GetComponent<Enemy>().target)
                         start = true;
-                }
-                if (start)
-                {
-                    canGoUp = true;
-                    startedRasingWall = true;
-                }
+             }
+             if (start)
+             {
+                  canGoUp = true;
+                  startedRasingWall = true;
+            }
             }
         if (startedRasingWall && other.gameObject.tag == "Player")
         {
             playerFirst = true;
         }
     }
-      
+    public void DestroyingEnemy()
+    {
+        startedRasingWall = false;
+        start = false;
+        canGoUp = false;
+    }
 }

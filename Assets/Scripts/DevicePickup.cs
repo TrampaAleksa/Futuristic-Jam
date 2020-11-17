@@ -55,7 +55,7 @@ public class DevicePickup : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             if (isPickedUp == true) return;
-            print("Click left mouse button to pick device up!");
+            //print("Click left mouse button to pick device up!");
             if (Input.GetAxis("Fire1") > 0)
             {
                 pickUp.Play();

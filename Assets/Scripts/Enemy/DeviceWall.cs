@@ -74,4 +74,14 @@ public class DeviceWall : MonoBehaviour
         start = false;
         canGoUp = false;
     }
+
+    public void PlayerCollidedWithEnemy()
+    {
+        if (startedRasingWall)
+        {
+            device.transform.position = startingPosition;
+            DestroyingEnemy();
+        }
+        comingToThisOne = false;
+    }
 }

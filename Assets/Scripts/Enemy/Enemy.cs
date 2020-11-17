@@ -63,14 +63,9 @@ public class Enemy : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            if (target.GetComponent<DeviceWall>().startedRasingWall)
-            {
-                deviceWall = target.GetComponent<DeviceWall>();
-                deviceWall.device.transform.position = deviceWall.startingPosition;
-                deviceWall.DestroyingEnemy();
-            }
-            target.GetComponent<DeviceWall>().comingToThisOne = false;
-            DisableEnemy();           
+            var enemyTargetWall = target.GetComponent<DeviceWall>();
+            enemyTargetWall.PlayerCollidedWithEnemy();
+            DisableEnemy();      
         }
 
     }

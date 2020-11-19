@@ -32,17 +32,16 @@ public class SpawnEnemies : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        timeElapsed += Time.deltaTime;
-        if (timeTillDeploy < timeElapsed)
-        {
-            if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true
-                                                                              && numberOfActiveEnemies < maxEnemies)
+        if (GameObject.FindGameObjectsWithTag("DeviceInPlace").Length > 0 && DeviceNotBeChased() == true
+            && numberOfActiveEnemies < maxEnemies)
+            {
+            timeElapsed += Time.deltaTime;
+            if (timeTillDeploy < timeElapsed)
             {
                 MakeThingToSpawn();
                 timeTillDeploy = Random.Range(minSecondsBetweenSpawning, maxSecondsBetweenSpawning);
                 timeElapsed = 0;
             }
-            else timeElapsed = 0;
         }
     }
 

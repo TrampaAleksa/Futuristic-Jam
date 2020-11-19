@@ -19,11 +19,11 @@ public class Enemy : MonoBehaviour
     DeviceWall deviceWall;
     void Start()
     {
-        deviceWall = GetComponent<DeviceWall>();
         enemy = GetComponent<Enemy>();
         timer = gameObject.AddComponent<TimedAction>();
         boxCollider = GetComponent<BoxCollider>();
         target = FindDeviceToChase();
+        deviceWall = target.GetComponent<DeviceWall>();
         if (target == null) return;
         navMeshAGent = this.GetComponent<NavMeshAgent>();
         SetDestination(target.transform);
@@ -31,12 +31,13 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
+        deviceWall.comingToThisOne = true;
         try
         {
             if (target.gameObject.CompareTag("DeviceInPlace")) return;
             ChaseNewTarget();
         }
-        catch (NullReferenceException ex)
+        catch (NullReferenceException)
         {
             DisableEnemy();
         }    
@@ -46,6 +47,7 @@ public class Enemy : MonoBehaviour
         target = FindDeviceToChase();
         if (target != null)
         {
+            deviceWall = target.GetComponent<DeviceWall>();
             SetDestination(target.transform);
         }
     }

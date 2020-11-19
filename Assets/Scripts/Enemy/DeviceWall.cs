@@ -5,7 +5,7 @@ using UnityEngine;
 public class DeviceWall : MonoBehaviour
 {
     public GameObject device;
-    public Vector3 startingPosition;
+    Vector3 startingPosition;
     public float speedOfRasingWall = 0.025f;
     [HideInInspector]
     public bool startedRasingWall = false;
@@ -15,7 +15,7 @@ public class DeviceWall : MonoBehaviour
     [HideInInspector]
     public bool canGoUp = false;
     bool playerFirst = false;
-    [HideInInspector]
+    //[HideInInspector]
     public bool comingToThisOne = false;
     void Start()
     {

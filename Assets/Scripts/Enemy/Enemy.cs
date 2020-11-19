@@ -23,9 +23,11 @@ public class Enemy : MonoBehaviour
         timer = gameObject.AddComponent<TimedAction>();
         boxCollider = GetComponent<BoxCollider>();
         target = FindDeviceToChase();
-        deviceWall = target.GetComponent<DeviceWall>();
-        if (target == null) return;
         navMeshAGent = this.GetComponent<NavMeshAgent>();
+
+        if (target == null) return;
+
+        deviceWall = target.GetComponent<DeviceWall>();
         SetDestination(target.transform);
     }
 

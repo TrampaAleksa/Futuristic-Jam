@@ -6,7 +6,7 @@ public class DeviceWall : MonoBehaviour
 {
     public GameObject device;
     Vector3 startingPosition;
-    public float speedOfRasingWall = 0.025f;
+    public float speedOfRasingWall = 0.6f;
     [HideInInspector]
     public bool startedRasingWall = false;
     GameObject enemy;
@@ -50,7 +50,7 @@ public class DeviceWall : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {       
-         if (other.gameObject.tag == "Enemy")
+         if (other.gameObject.CompareTag("Enemy"))
          {
              if (!start) {
                   enemy = other.gameObject;

@@ -52,7 +52,7 @@ public class DevicePickup : MonoBehaviour
 
     private void OnTriggerStay(Collider collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (isPickedUp == true) return;
             //print("Click left mouse button to pick device up!");

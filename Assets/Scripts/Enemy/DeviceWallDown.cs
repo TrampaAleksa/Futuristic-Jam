@@ -9,7 +9,7 @@ public class DeviceWallDown : MonoBehaviour
     [SerializeField]
     float timesSlowerMovingWall = 2;
     [SerializeField]
-    float positionForActiveSignal = -0.9f;
+    float YPositionForActiveSignal = -0.9f;
     float sppedOfGoingUp;
     public float startinWallgPositionY = -2.63f;
     DeviceWall deviceWall;
@@ -22,14 +22,14 @@ public class DeviceWallDown : MonoBehaviour
     }
     private void Update()
     {
-        if (startedGoingDown)
+        if (startedGoingDown && device.transform.localPosition.y >= startinWallgPositionY)
         {
             device.transform.Translate(Vector3.down * sppedOfGoingUp / timesSlowerMovingWall * Time.deltaTime);
         }
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (device.transform.localPosition.y >= startinWallgPositionY && other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             startedGoingDown = true;
         }
@@ -37,7 +37,7 @@ public class DeviceWallDown : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         startedGoingDown = false;
-        if (device.transform.localPosition.y < positionForActiveSignal && other.gameObject.tag == "Player")
+        if (device.transform.localPosition.y < YPositionForActiveSignal && other.gameObject.CompareTag("Player"))
         {
             gameObject.tag = "DeviceInPlace";
             deviceWall.comingToThisOne = false;

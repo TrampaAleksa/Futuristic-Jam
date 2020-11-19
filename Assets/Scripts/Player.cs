@@ -13,9 +13,12 @@ public class Player : MonoBehaviour {
     public float bonusMoveSpeed = 1f;
     public int bonusTime = 5;
     public static int teleport;
+
+    public float initY;
     void Start() {
         player = gameObject.GetComponent<CharacterController>();
         teleport = 1;
+        initY = transform.position.y;
     }
 
     void Update()
@@ -23,6 +26,11 @@ public class Player : MonoBehaviour {
         Vector3 movementZ = Vector3.forward * (Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
         Vector3 movement = transform.TransformDirection(movementZ);
         player.Move(movement);
+        
+        player.enabled = false;
+        transform.position = new Vector3(transform.position.x, initY, transform.position.z);
+        player.enabled = true;
+        
         if (Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(0, rotationSpeed * Input.GetAxis("Horizontal"), 0);

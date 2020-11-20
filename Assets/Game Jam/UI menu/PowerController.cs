@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class PowerController : MonoBehaviour
 {
+    public static PowerController Instance;
     [SerializeField]
     private Text TeleportValue;
     [SerializeField]
@@ -22,6 +23,7 @@ public class PowerController : MonoBehaviour
 
     private void Awake()
     {
+        Instance = this;
         SetSpeed(1);
         SpeedValue.text = 1.ToString();
         SetTeleport(false);
@@ -58,14 +60,6 @@ public class PowerController : MonoBehaviour
                 isPositive = false;
             }
             SpeedValue.text = (speed*-1).ToString();
-        }
-    }
-    public bool speed;
-    private void Update()
-    {
-        if(Input.GetKeyDown(KeyCode.W))
-        {
-            SetTeleport(speed);
         }
     }
 }

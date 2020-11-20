@@ -11,6 +11,7 @@ public class Timer : MonoBehaviour
     void Start()
     {
         currentTime = startingTime;
+        EnergyBarController.Instance.SetStartTime(currentTime);
     }
 
     

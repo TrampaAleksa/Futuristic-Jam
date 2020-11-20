@@ -143,5 +143,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 6240888018005542861}
-  pulseSpeed: {x: 0.1, y: 0}
+  pulseSpeed: {x: 0.01, y: 0}
   offset: {x: 0, y: 0}

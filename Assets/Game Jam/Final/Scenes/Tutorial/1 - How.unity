@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 18.162865, g: 16.111454, b: 19.067364, a: 1}
+  m_IndirectSpecularColor: {r: 18.134974, g: 16.054592, b: 19.041567, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -2135,6 +2135,7 @@ MonoBehaviour:
   rotationSpeed: 1
   bonusMoveSpeed: 1
   bonusTime: 5
+  initY: 0
 --- !u!54 &742533206
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2926,38 +2927,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 956333036869011192, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -0.08300781
-      objectReference: {fileID: 0}
-    - target: {fileID: 956333036869011192, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 73.716064
-      objectReference: {fileID: 0}
-    - target: {fileID: 1365057711459859123, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -23.579102
-      objectReference: {fileID: 0}
-    - target: {fileID: 3812261560450961939, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6467697530430042022, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7362172798828894354, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7423542612666712927, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 9011847893379653767, guid: df01b413351dabf4589e196ae183dc86, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 9011847893700676009, guid: df01b413351dabf4589e196ae183dc86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -3046,8 +3015,7 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas Final Game
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 9011847894504650252, guid: df01b413351dabf4589e196ae183dc86, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df01b413351dabf4589e196ae183dc86, type: 3}
 --- !u!4 &1262075197 stripped
 Transform:

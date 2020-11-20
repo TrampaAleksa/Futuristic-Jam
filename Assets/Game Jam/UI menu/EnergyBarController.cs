@@ -10,12 +10,16 @@ public class EnergyBarController : MonoBehaviour
     private Color goodColor;
     [SerializeField]
     private Color badColor;
-    private float divider=9.375f;
+    private float divider;
 
     public static EnergyBarController Instance;
     private void Awake()
     {
         Instance = this;
+    }
+    public void SetStartTime(float time)
+    {
+        divider = time / 3.2f;
     }
     public void SetTime(float time)
     {

@@ -15,13 +15,14 @@ public class Timer : MonoBehaviour
     }
 
     
+    
     void Update()
     {
-        currentTime -= 1 * Time.deltaTime;
+        currentTime -= Time.deltaTime;
         EnergyBarController.Instance.SetTime(currentTime);
         if (currentTime <= 0)
         {
-            currentTime = 0;
+            PauseMenu.Instance.TryAgain();
         }
     }
 }

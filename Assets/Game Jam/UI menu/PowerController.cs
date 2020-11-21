@@ -41,7 +41,7 @@ public class PowerController : MonoBehaviour
             TeleportValue.color = TeleportOFF.color;
         }
     }
-    public void SetSpeed(int speed)
+    public void SetSpeed(float speed)
     {
         if(speed>0)
         {

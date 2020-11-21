@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 18.134974, g: 16.054592, b: 19.041567, a: 1}
+  m_IndirectSpecularColor: {r: 18.17264, g: 16.095133, b: 19.082655, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -475,6 +475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff94febc73243545ac43b3b70c03350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTeleport: 1
   endingPosition: {fileID: 1414756321}
   spawnOffset: {x: 0, y: -2.5, z: 0}
   player: {fileID: 742533205}
@@ -959,8 +960,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30c63e290de72f41a19d0199b2a2b3c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  teleport0: {fileID: 63191283}
-  teleport1: {fileID: 1414756322}
 --- !u!1 &210954764
 GameObject:
   m_ObjectHideFlags: 0
@@ -4083,6 +4082,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ff94febc73243545ac43b3b70c03350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canTeleport: 1
   endingPosition: {fileID: 63191282}
   spawnOffset: {x: 0, y: -2.5, z: 0}
   player: {fileID: 742533205}

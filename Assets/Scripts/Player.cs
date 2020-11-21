@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System;
 
 public class Player : MonoBehaviour {
-
+    Teleport[] teleports;
     public AudioSource pickUpPower;
     public float moveSpeed = 3.0f;
     public float rotationSpeed = 1f;
@@ -12,12 +12,11 @@ public class Player : MonoBehaviour {
     public CharacterController player;
     public float bonusMoveSpeed = 1f;
     public int bonusTime = 5;
-    public static int teleport;
 
     public float initY;
     void Start() {
+        teleports= GameObject.FindObjectsOfType<Teleport>();
         player = gameObject.GetComponent<CharacterController>();
-        teleport = 1;
         initY = transform.position.y;
     }
 
@@ -45,6 +44,7 @@ public class Player : MonoBehaviour {
         if (other.gameObject.CompareTag("ms+"))
         {
             moveSpeed += bonusMoveSpeed;
+            SetSpeed();
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
@@ -52,6 +52,7 @@ public class Player : MonoBehaviour {
         if (other.gameObject.CompareTag("ms-"))
         {
             moveSpeed -= bonusMoveSpeed;
+            SetSpeed();
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
@@ -59,8 +60,6 @@ public class Player : MonoBehaviour {
         if (other.gameObject.CompareTag("timer+"))
         {
             Timer.currentTime += bonusTime;
-            //time.text = timer.ToString("0");
-            Debug.Log("New time " + Timer.currentTime);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
@@ -68,23 +67,34 @@ public class Player : MonoBehaviour {
         if (other.gameObject.CompareTag("timer-"))
         {
             Timer.currentTime -= bonusTime;
-            Debug.Log("New time " + Timer.currentTime);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
         else
         if (other.gameObject.CompareTag("teleport+"))
         {
-            teleport = 1;
+            TeleportsChanger(true);
+            PowerController.Instance.SetTeleport(true);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }else
         if(other.gameObject.CompareTag("teleport-"))
         {
-            teleport = 1;
+            TeleportsChanger(false);
+            PowerController.Instance.SetTeleport(false);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
         }
-        
+    }
+    public void SetSpeed()
+    {
+        PowerController.Instance.SetSpeed(moveSpeed);
+    }
+    private void TeleportsChanger(bool isActive)
+    {
+        foreach (var item in teleports)
+        {
+           item.canTeleport=isActive;
+        }
     }
 }

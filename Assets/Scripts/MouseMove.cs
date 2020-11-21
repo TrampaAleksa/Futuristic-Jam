@@ -16,6 +16,7 @@ public class MouseMove : MonoBehaviour
 	private void Start()
 	{
 		x = Camera.main.transform.localRotation.x;
+		print("start je " + x);
 		Cursor.visible = false;
 		Cursor.lockState = CursorLockMode.Locked;
 	}
@@ -25,24 +26,25 @@ public class MouseMove : MonoBehaviour
 		//print(Camera.main.transform.localRotation.x);
 		if (move != 0)
 		{
-			if (x - Camera.main.transform.localRotation.x <= maxUpperLook)
+			if (x - Camera.main.transform.localRotation.x >= -maxUpperLook)
 			{
+				//print("goUp");
 				canGoUp = true;
 			}
 			else canGoUp = false; 
-			if (Camera.main.transform.localRotation.x <= x + maxDownLook)
+			if (Camera.main.transform.localRotation.x >= x - maxDownLook)
 			{
 				canGoDown = true;
 			}
 			else canGoDown = false;
 			if (canGoUp && move > 0)
 			{
-
 				Camera.main.transform.Rotate(-rotationSpeed, 0, 0);
 			}
 			if (canGoDown && move < 0)
 				Camera.main.transform.Rotate(rotationSpeed, 0, 0);
 		}
+		//print(Camera.main.transform.localRotation.x);
 		if (Input.GetButtonDown("Cancel"))
 		{
 			LockCursor(false);

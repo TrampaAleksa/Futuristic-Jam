@@ -50,6 +50,7 @@ public class Player : MonoBehaviour {
             SetSpeed();
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
         }
         else
         if (other.gameObject.CompareTag("ms-"))
@@ -58,6 +59,8 @@ public class Player : MonoBehaviour {
             SetSpeed();
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
+
         }
         else
         if (other.gameObject.CompareTag("timer+"))
@@ -65,6 +68,8 @@ public class Player : MonoBehaviour {
             Timer.currentTime += bonusTime;
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
+
         }
         else
         if (other.gameObject.CompareTag("timer-"))
@@ -72,6 +77,8 @@ public class Player : MonoBehaviour {
             Timer.currentTime -= bonusTime;
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
+
         }
         else
         if (other.gameObject.CompareTag("teleport+"))
@@ -80,6 +87,8 @@ public class Player : MonoBehaviour {
             PowerController.Instance.SetTeleport(true);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
+
         }else
         if(other.gameObject.CompareTag("teleport-"))
         {
@@ -87,6 +96,8 @@ public class Player : MonoBehaviour {
             PowerController.Instance.SetTeleport(false);
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
+            Debug.Log("power up: " + other.tag);
+
         }
     }
     public void SetSpeed()

@@ -7,7 +7,7 @@ public class MouseMove : MonoBehaviour
 	float rotationSpeed = 0.4f;
 	float move;
 	[SerializeField]
-	float maxDownLook = 0.15f;
+	float maxDownLook = 0.05f;
 	[SerializeField]
 	float maxUpperLook = 0.15f;
 	float x;
@@ -26,23 +26,46 @@ public class MouseMove : MonoBehaviour
 		//print(Camera.main.transform.localRotation.x);
 		if (move != 0)
 		{
-			if (x - Camera.main.transform.localRotation.x >= -maxUpperLook)
+			if (x < 0)
 			{
-				//print("goUp");
-				canGoUp = true;
+				if (x - Camera.main.transform.localRotation.x >= -maxUpperLook)
+				{
+					//print("goUp");
+					canGoUp = true;
+				}
+				else canGoUp = false;
+				if (Camera.main.transform.localRotation.x >= x - maxDownLook)
+				{
+					canGoDown = true;
+				}
+				else canGoDown = false;
+				if (canGoUp && move > 0)
+				{
+					Camera.main.transform.Rotate(-rotationSpeed, 0, 0);
+				}
+				if (canGoDown && move < 0)
+					Camera.main.transform.Rotate(rotationSpeed, 0, 0);
 			}
-			else canGoUp = false; 
-			if (Camera.main.transform.localRotation.x >= x - maxDownLook)
-			{
-				canGoDown = true;
+            else
+            {
+				if (x - Camera.main.transform.localRotation.x <= maxUpperLook)
+				{
+					//print("goUp");
+					canGoUp = true;
+				}
+				else canGoUp = false;
+				if (Camera.main.transform.localRotation.x <= x + maxDownLook)
+				{
+					canGoDown = true;
+				}
+				else canGoDown = false;
+				if (canGoUp && move > 0)
+				{
+					Camera.main.transform.Rotate(-rotationSpeed, 0, 0);
+				}
+				if (canGoDown && move < 0)
+					Camera.main.transform.Rotate(rotationSpeed, 0, 0);
 			}
-			else canGoDown = false;
-			if (canGoUp && move > 0)
-			{
-				Camera.main.transform.Rotate(-rotationSpeed, 0, 0);
-			}
-			if (canGoDown && move < 0)
-				Camera.main.transform.Rotate(rotationSpeed, 0, 0);
 		}
 		//print(Camera.main.transform.localRotation.x);
 		if (Input.GetButtonDown("Cancel"))

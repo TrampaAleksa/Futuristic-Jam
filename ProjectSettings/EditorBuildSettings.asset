@@ -23,4 +23,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Jam/Final/Scenes/Tutorial/5 - Teleport.unity
     guid: 00a404c1f40dd464aa523f5cbd003524
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Final Scene.unity
+    guid: 34e8d82728bb9264bb8b64baa443c4e0
   m_configObjects: {}

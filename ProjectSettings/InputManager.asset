@@ -57,10 +57,10 @@ InputManager:
     m_Name: Fire2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: 
-    positiveButton: left alt
+    negativeButton: q
+    positiveButton: e
     altNegativeButton: 
-    altPositiveButton: mouse 1
+    altPositiveButton: 
     gravity: 1000
     dead: 0.001
     sensitivity: 1000
@@ -475,6 +475,22 @@ InputManager:
     descriptiveNegativeName: 
     negativeButton: 
     positiveButton: left alt
+    altNegativeButton: 
+    altPositiveButton: joystick button 1
+    gravity: 0
+    dead: 0
+    sensitivity: 0
+    snap: 0
+    invert: 0
+    type: 0
+    axis: 0
+    joyNum: 0
+  - serializedVersion: 3
+    m_Name: SideMove
+    descriptiveName: 
+    descriptiveNegativeName: 
+    negativeButton: q
+    positiveButton: e
     altNegativeButton: 
     altPositiveButton: joystick button 1
     gravity: 0

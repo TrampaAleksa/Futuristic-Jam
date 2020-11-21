@@ -10,14 +10,17 @@ public class Teleport : MonoBehaviour
     
     private AudioSource teleportSound;
     [SerializeField]private Player player;
+    Rigidbody rb;
 
     private void Awake()
     {
+
         teleportSound = GetComponent<AudioSource>();
         player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
     }
     private void Start()
     {
+        rb = player.GetComponent<Rigidbody>();
         PowerController.Instance.SetTeleport(canTeleport);
     }
 
@@ -25,9 +28,8 @@ public class Teleport : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)  && canTeleport && isCollided)
         {
-            player.player.enabled = false;
             player.transform.position = endingPosition.transform.position + spawnOffset;
-            var playerEnabled = player.player.enabled = true;
+            rb.MovePosition(player.gameObject.transform.position);
             teleportSound.Play();
         }
     }

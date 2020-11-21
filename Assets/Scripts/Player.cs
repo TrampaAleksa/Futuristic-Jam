@@ -8,31 +8,24 @@ public class Player : MonoBehaviour {
     public AudioSource pickUpPower;
     public float moveSpeed = 3.0f;
     public float rotationSpeed = 1f;
-    [NonSerialized]
-    public CharacterController player;
     public float bonusMoveSpeed = 1f;
     public int bonusTime = 5;
-
-    public float initY;
-
-    private Rigidbody rb;
-    void Start() {
-        teleports= GameObject.FindObjectsOfType<Teleport>();
-        player = gameObject.GetComponent<CharacterController>();
-        initY = transform.position.y;
+    [SerializeField]
+    float speedOfRotation = 5;
+    [HideInInspector]
+    public Rigidbody rb;
+    void Start()
+    {
+        teleports = GameObject.FindObjectsOfType<Teleport>();
         rb = GetComponent<Rigidbody>();
     }
-
+    private void FixedUpdate()
+    {
+        if (Input.GetAxis("Vertical") != 0)
+            rb.MovePosition(transform.position + transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+    }
     void Update()
     {
-        Vector3 movementZ = Vector3.forward * (Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
-        Vector3 movement = transform.TransformDirection(movementZ);
-        player.Move(movement);
-        
-        player.enabled = false;
-        transform.position = new Vector3(transform.position.x, initY, transform.position.z);
-        player.enabled = true;
-        
         if (Input.GetAxis("Horizontal") != 0)
         {
             transform.Rotate(0, rotationSpeed * Input.GetAxis("Horizontal"), 0);

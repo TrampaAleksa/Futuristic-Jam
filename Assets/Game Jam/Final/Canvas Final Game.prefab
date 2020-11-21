@@ -218,13 +218,14 @@ GameObject:
   - component: {fileID: 7362172798828894354}
   - component: {fileID: 5410586085751248565}
   - component: {fileID: 3507117596599517564}
+  - component: {fileID: 1252966524}
   m_Layer: 5
   m_Name: Dialog
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7362172798828894354
 RectTransform:
   m_ObjectHideFlags: 0
@@ -284,6 +285,20 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &1252966524
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 243465644981654308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 626172bdc3ecdcc469387a1d83dceb97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  dialogue: {fileID: 213180676807051631}
+  dialogueHolder: {fileID: 5478579350347456142}
 --- !u!1 &375323286782676182
 GameObject:
   m_ObjectHideFlags: 0
@@ -478,7 +493,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -23.57901}
+  m_AnchoredPosition: {x: 0, y: -23.579102}
   m_SizeDelta: {x: -102.45528, y: -47.15753}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6712398344915298481
@@ -711,8 +726,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.0000076294, y: 0.0000019073}
-  m_SizeDelta: {x: 356.9334, y: 66.92501}
+  m_AnchoredPosition: {x: -0.019989014, y: 2.9000015}
+  m_SizeDelta: {x: 684.7384, y: 166.97049}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7454936711322411398
 CanvasRenderer:
@@ -735,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6745098, g: 0.94509804, b: 0.94509804, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -746,8 +761,8 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 2e22bd236ffafb641a00c137e5e1b217, type: 3}
     m_FontSize: 39
     m_FontStyle: 0
-    m_BestFit: 0
-    m_MinSize: 2
+    m_BestFit: 1
+    m_MinSize: 30
     m_MaxSize: 49
     m_Alignment: 4
     m_AlignByGeometry: 0
@@ -755,7 +770,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: New Text
+  m_Text: Move up to a device and press the left mouse button to pick it up. Right
+    mouse button to drop.
 --- !u!1 &1437920403988053598
 GameObject:
   m_ObjectHideFlags: 0
@@ -1091,7 +1107,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -0.08305359, y: 73.716}
+  m_AnchoredPosition: {x: -0.08300781, y: 73.716064}
   m_SizeDelta: {x: -102.6214, y: -147.43164}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &7735353508051344068
@@ -1271,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3533085479911041112
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2841,11 +2857,11 @@ RectTransform:
   m_Father: {fileID: 7362172798828894354}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 600.9, y: -440.37}
-  m_SizeDelta: {x: 718.3412, y: 199.50002}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 30, y: -30}
+  m_SizeDelta: {x: 718.3412, y: 199.5}
+  m_Pivot: {x: 0, y: 1}
 --- !u!222 &2278360322255967382
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2867,7 +2883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.8235294}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

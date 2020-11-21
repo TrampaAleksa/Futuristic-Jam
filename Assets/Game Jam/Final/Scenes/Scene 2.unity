@@ -5980,6 +5980,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 742533210}
     m_Modifications:
+    - target: {fileID: 1987905704124058684, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905704294601630, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905704645528327, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905705244720698, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 1987905705432748320, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
       propertyPath: m_Name
       value: PowerUpSoundsHolder
@@ -6027,6 +6043,18 @@ PrefabInstance:
     - target: {fileID: 1987905705432748321, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905705432748322, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: robotWalk
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905705607236444, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 1987905705665520318, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}
+      propertyPath: m_Volume
+      value: 0.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7fa3d6aad23167b449a38730444074c4, type: 3}

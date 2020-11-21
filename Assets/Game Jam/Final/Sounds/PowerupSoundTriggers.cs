@@ -10,32 +10,32 @@ public class PowerupSoundTriggers : MonoBehaviour
         if (other.gameObject.CompareTag("ms+"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.speedUp.PlayDelayed(delay);
+            SoundsHolder.Instance.speedUp.PlayDelayed(delay);
         }
         else if (other.gameObject.CompareTag("ms-"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.speedDown.PlayDelayed(delay);
+            SoundsHolder.Instance.speedDown.PlayDelayed(delay);
         }
         else if (other.gameObject.CompareTag("timer+"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.timeUp.PlayDelayed(delay);
+            // PowerUpSounds.Instance.timeUp.PlayDelayed(delay);
         }
         else if (other.gameObject.CompareTag("timer-"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.timeDown.PlayDelayed(delay);
+            // PowerUpSounds.Instance.timeDown.PlayDelayed(delay);
         }
         else if (other.gameObject.CompareTag("teleport+"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.teleportOn.PlayDelayed(delay);
+            SoundsHolder.Instance.teleportOn.PlayDelayed(delay);
         }
         else if (other.gameObject.CompareTag("teleport-"))
         {
             Debug.Log("power up: " + other.tag);
-            PowerUpSounds.Instance.teleportOff.PlayDelayed(delay);
+            SoundsHolder.Instance.teleportOff.PlayDelayed(delay);
         }
     }
 }

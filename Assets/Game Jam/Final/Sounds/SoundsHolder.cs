@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PowerUpSounds : MonoBehaviour
+public class SoundsHolder : MonoBehaviour
 {
     public AudioSource speedUp;
     public AudioSource speedDown;
@@ -12,7 +12,7 @@ public class PowerUpSounds : MonoBehaviour
     public AudioSource teleportOn;
     public AudioSource teleportOff;
 
-    public static PowerUpSounds Instance;
+    public static SoundsHolder Instance;
 
     private void Awake()
     {

@@ -5,9 +5,16 @@ using UnityEngine.SceneManagement;
 
 public class PauseMenu : MonoBehaviour
 {
+    public static PauseMenu Instance;
     public static bool GameIsPaused = false;
-
+    public GameObject nextLevel;
+    public GameObject playAgain;
+    public GameObject tryAgain;
     public GameObject pauseMenuUi;
+    void Awake()
+    {
+        Instance = this;
+    }
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Escape)) 
@@ -41,6 +48,39 @@ public class PauseMenu : MonoBehaviour
     {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
+    }
+    public void ActivateNextMenu(bool activate)
+    {
+        ToggleMenu(activate, nextLevel);
+    }
+    public void ActivatePlayAgainMenu(bool activate)
+    {
+        ToggleMenu(activate, playAgain);
+    }
+    public void ActivateTryAgainMenu(bool activate)
+    {
+        ToggleMenu(activate, tryAgain);
+    }
+    public void CallNextLevel()
+    {
+        if (SceneManager.GetActiveScene().buildIndex+1 >= SceneManager.sceneCountInBuildSettings)
+        {
+            ActivatePlayAgainMenu(true);
+        }
+        else
+        {
+            ActivateNextMenu(true);
+        }
+    }
+    void ToggleMenu(bool isActive, GameObject gameObject)
+    {
+        gameObject.SetActive(isActive);
+        if (isActive)
+            Time.timeScale = 0;
+        else
+        {
+            Time.timeScale = 1;
+        }
     }
     public void NextLevel()
     {

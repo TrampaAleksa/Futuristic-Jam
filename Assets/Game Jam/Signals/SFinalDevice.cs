@@ -53,8 +53,7 @@ public class SFinalDevice : MonoBehaviour
         
         if (numberOfGood != 0 && numberOfBad <=0)
         {
-            print("Won the game");
-            GameOverMenu.Instance.GameOver();
+            PauseMenu.Instance.CallNextLevel();
         }
 
         timerActive = false;

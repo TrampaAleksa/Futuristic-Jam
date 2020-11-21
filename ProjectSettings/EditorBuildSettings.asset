@@ -9,6 +9,18 @@ EditorBuildSettings:
     path: Assets/Scenes/UIMenu.unity
     guid: 78d30456a2780774b99bac6022177ad9
   - enabled: 1
-    path: Assets/Game Jam/Final/Scenes/Final Scene.unity
-    guid: 34e8d82728bb9264bb8b64baa443c4e0
+    path: Assets/Game Jam/Final/Scenes/Tutorial/1 - How.unity
+    guid: 84ddf483a37d9ab4f87d63aedbf5954c
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Tutorial/2 - Wall and emmision.unity
+    guid: 07047945aac4f884f9f9529ba527ea30
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Tutorial/3 - Enemy wall.unity
+    guid: 32e17e15cb49d494ebb5bd04649ac851
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Tutorial/4 - Enemy.unity
+    guid: 2ec410f73313dc8458f4260f12e025f1
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Tutorial/5 - Teleport.unity
+    guid: 00a404c1f40dd464aa523f5cbd003524
   m_configObjects: {}

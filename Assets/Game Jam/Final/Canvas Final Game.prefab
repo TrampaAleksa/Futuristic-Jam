@@ -243,7 +243,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.00012207031, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: -0.00024414062, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5410586085751248565
@@ -1630,7 +1630,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9013137246722024036
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1708,7 +1708,6 @@ MonoBehaviour:
   TeleportON: {fileID: 7404889728223878881}
   SpeedImage: {fileID: 1478551335842897914}
   SpeedValue: {fileID: 8559961638184663768}
-  speed: 253
 --- !u!1 &4354336457874057186
 GameObject:
   m_ObjectHideFlags: 0
@@ -2090,6 +2089,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca24e87047de9b4ea7c2a5e25aa5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: {fileID: 0}
+  loadMenu: {fileID: 0}
+  playAgain: {fileID: 0}
+  tryAgain: {fileID: 0}
+  restart: {fileID: 0}
   pauseMenuUi: {fileID: 0}
 --- !u!1 &4560884595398885138
 GameObject:
@@ -4431,7 +4435,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &9011847893379653766
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4609,6 +4613,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eca24e87047de9b4ea7c2a5e25aa5c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  nextLevel: {fileID: 6467697530430042022}
+  loadMenu: {fileID: 0}
+  playAgain: {fileID: 6714812981614587241}
+  tryAgain: {fileID: 4958685590291773899}
+  restart: {fileID: 0}
   pauseMenuUi: {fileID: 4560656276157720678}
 --- !u!114 &9011847893700676008
 MonoBehaviour:
@@ -4720,7 +4729,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1879473587455773317, guid: 45f0fbfaadbdf9845bbb5963d439157e, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 45f0fbfaadbdf9845bbb5963d439157e, type: 3}

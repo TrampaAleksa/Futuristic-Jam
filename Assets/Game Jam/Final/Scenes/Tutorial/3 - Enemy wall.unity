@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 18.134974, g: 16.054592, b: 19.041567, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -686,7 +686,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 210954764}
   m_LocalRotation: {x: -0, y: -0, z: 0.6731189, w: 0.7395344}
-  m_LocalPosition: {x: -0.01740609, y: -0.12773824, z: 0.30193427}
+  m_LocalPosition: {x: -0.01740609, y: -0.12773824, z: 0.258}
   m_LocalScale: {x: 0.033959597, y: 0.049999993, z: 0.06666666}
   m_Children: []
   m_Father: {fileID: 4210138880989027927}
@@ -2117,13 +2117,13 @@ CharacterController:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Height: 2
-  m_Radius: 0.5
+  m_Height: 3
+  m_Radius: 0.8
   m_SlopeLimit: 45
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!114 &742533209
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2458,7 +2458,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1008186698}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.4980939, y: -0.44273812, z: 0.3019342}
+  m_LocalPosition: {x: 0.4980939, y: -0.44273812, z: 0.258}
   m_LocalScale: {x: 0.0339596, y: 0.05, z: 0.06666666}
   m_Children: []
   m_Father: {fileID: 4210138880989027927}
@@ -3423,6 +3423,7 @@ GameObject:
   - component: {fileID: 1574386506}
   - component: {fileID: 1574386508}
   - component: {fileID: 1574386507}
+  - component: {fileID: 1574386509}
   m_Layer: 9
   m_Name: fixed Emitter (2)
   m_TagString: Finish
@@ -3558,6 +3559,20 @@ MonoBehaviour:
   timesSlowerMovingWall: 2
   YPositionForActiveSignal: -0.9
   startinWallgPositionY: -2.63
+--- !u!114 &1574386509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1574386501}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3a182cf704993b38b02154c8f6582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShow: 3
+  textToShow: Stand for a few seconds until the wall gets low enough.
 --- !u!1 &1579583027
 GameObject:
   m_ObjectHideFlags: 0
@@ -4002,6 +4017,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213180676807051631, guid: df01b413351dabf4589e196ae183dc86, type: 3}
+      propertyPath: m_Text
+      value: Remove the wall to win. To remove a wall stand near the device.
+      objectReference: {fileID: 0}
     - target: {fileID: 7362172798828894354, guid: df01b413351dabf4589e196ae183dc86, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.00024414062
@@ -5523,7 +5542,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3324221313942319648}
   m_LocalRotation: {x: -0, y: -0, z: 0.32666755, w: 0.9451393}
-  m_LocalPosition: {x: 0.233, y: 0.702, z: 0.302}
+  m_LocalPosition: {x: 0.233, y: 0.702, z: 0.258}
   m_LocalScale: {x: 0.0339596, y: 0.063999996, z: 0.06666666}
   m_Children: []
   m_Father: {fileID: 4210138880989027927}

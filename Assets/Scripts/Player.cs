@@ -14,10 +14,13 @@ public class Player : MonoBehaviour {
     public int bonusTime = 5;
 
     public float initY;
+
+    private Rigidbody rb;
     void Start() {
         teleports= GameObject.FindObjectsOfType<Teleport>();
         player = gameObject.GetComponent<CharacterController>();
         initY = transform.position.y;
+        rb = GetComponent<Rigidbody>();
     }
 
     void Update()

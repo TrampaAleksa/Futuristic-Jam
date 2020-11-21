@@ -14,10 +14,12 @@ public class Player : MonoBehaviour {
     float speedOfRotation = 5;
     [HideInInspector]
     public Rigidbody rb;
+    Timer timer;
     void Start()
     {
         teleports = GameObject.FindObjectsOfType<Teleport>();
         rb = GetComponent<Rigidbody>();
+        timer = GetComponent<Timer>();
     }
     private void FixedUpdate()
     {
@@ -58,7 +60,11 @@ public class Player : MonoBehaviour {
         else
         if (other.gameObject.CompareTag("timer+"))
         {
-            Timer.currentTime += bonusTime;
+            if (Timer.currentTime + bonusTime > timer.startingTime)
+            {
+                Timer.currentTime = timer.startingTime;
+            }
+            else Timer.currentTime += bonusTime;
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
             Debug.Log("power up: " + other.tag);

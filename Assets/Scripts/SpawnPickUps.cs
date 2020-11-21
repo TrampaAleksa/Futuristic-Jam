@@ -7,7 +7,7 @@ public class SpawnPickUps : MonoBehaviour
     public static List<Place> selectedPlaces;
     List<GameObject> placeHolders;
     public GameObject package;
-    List<string> tags;
+    public List<string> tags;
     public float timeSpawn = 10;
     public float deletePackage = 20;
     public static List<GameObject> packages;
@@ -39,13 +39,13 @@ public class SpawnPickUps : MonoBehaviour
         placeHolders.Add(placeholder3);
         placeHolders.Add(placeholder4);
         //placeHolders.Add(placeholder5);
-        tags = new List<string>();
-        tags.Add(tag0);
-        tags.Add(tag1);
-        tags.Add(tag2);
-        tags.Add(tag3);
-        tags.Add(tag4);
-        tags.Add(tag5);
+        // tags = new List<string>();
+        // tags.Add(tag0);
+        // tags.Add(tag1);
+        // tags.Add(tag2);
+        // tags.Add(tag3);
+        // tags.Add(tag4);
+        // tags.Add(tag5);
        
         selectedPlaces = new List<Place>();
        
@@ -89,13 +89,16 @@ public class SpawnPickUps : MonoBehaviour
     {
         if ((int)currentTime == (int)deletingTime)
         {
-            GameObject help = packages[0];
-            packages.Remove(packages[0]);
-            takenPlaces.Remove(takenPlaces[0]);
-            selectedPlaces.Remove(selectedPlaces[0]);
-            Destroy(help);
-            deletingTime += deletePackage;
-            Debug.Log("The object has been deleted ");
+            if (packages.Count > 0)
+            {
+                GameObject help = packages[0];
+                packages.Remove(packages[0]);
+                takenPlaces.Remove(takenPlaces[0]);
+                selectedPlaces.Remove(selectedPlaces[0]);
+                Destroy(help);
+                deletingTime += deletePackage;
+                Debug.Log("The object has been deleted ");
+            }
         }
     }
     public bool IsItFree(int marko)

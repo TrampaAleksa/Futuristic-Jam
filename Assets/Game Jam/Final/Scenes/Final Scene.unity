@@ -2909,6 +2909,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   package: {fileID: 5670364585916777592, guid: 5507ece43f682634e98b020038f807a3, type: 3}
+  tags:
+  - timer+
+  - timer-
+  - ms+
+  - ms+
+  - teleport+
+  - teleport+
   timeSpawn: 10
   deletePackage: 30
   placeholder0: {fileID: 159381285}

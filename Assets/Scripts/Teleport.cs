@@ -1,10 +1,12 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 public class Teleport : MonoBehaviour
 {
     public bool canTeleport=false;
     public Transform endingPosition;
     public Vector3 spawnOffset;
+    private bool isCollided;
     
     private AudioSource teleportSound;
     [SerializeField]private Player player;
@@ -19,9 +21,9 @@ public class Teleport : MonoBehaviour
         PowerController.Instance.SetTeleport(canTeleport);
     }
 
-    private void OnTriggerStay(Collider other)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E) && other.gameObject.CompareTag("Player") && canTeleport)
+        if (Input.GetKeyDown(KeyCode.E)  && canTeleport && isCollided)
         {
             player.player.enabled = false;
             player.transform.position = endingPosition.transform.position + spawnOffset;
@@ -29,5 +31,20 @@ public class Teleport : MonoBehaviour
             teleportSound.Play();
         }
     }
-    
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player") )
+        {
+            isCollided = true;
+        }
+       
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.CompareTag("Player"))
+        {
+            isCollided = false;
+        }
+    }
 }

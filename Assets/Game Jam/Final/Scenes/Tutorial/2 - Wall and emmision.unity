@@ -1526,6 +1526,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213180676807051631, guid: df01b413351dabf4589e196ae183dc86, type: 3}
+      propertyPath: m_Text
+      value: A device will emit a signal when it is receiving at least one signal.
+        Move the devices closer to win.
+      objectReference: {fileID: 0}
     - target: {fileID: 9011847893700676009, guid: df01b413351dabf4589e196ae183dc86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

@@ -1360,6 +1360,8 @@ GameObject:
   - component: {fileID: 503421654}
   - component: {fileID: 503421653}
   - component: {fileID: 503421652}
+  - component: {fileID: 503421655}
+  - component: {fileID: 503421656}
   m_Layer: 9
   m_Name: fixed Emitter
   m_TagString: Untagged
@@ -1451,6 +1453,33 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 503421650}
   m_Mesh: {fileID: -7647463442239531939, guid: e51acb7fe44709542ba72ab079a34a25, type: 3}
+--- !u!114 &503421655
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503421650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3a182cf704993b38b02154c8f6582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShow: 5
+  textToShow: The purple devices can't be picked up
+--- !u!65 &503421656
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 503421650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.6849432, y: 2.1880555, z: 1.2897375}
+  m_Center: {x: 0.14586616, y: 0.07729578, z: -0.040795002}
 --- !u!1 &509196248
 GameObject:
   m_ObjectHideFlags: 0
@@ -2228,6 +2257,7 @@ GameObject:
   - component: {fileID: 863980869}
   - component: {fileID: 863980868}
   - component: {fileID: 863980867}
+  - component: {fileID: 863980872}
   m_Layer: 9
   m_Name: emitter
   m_TagString: Untagged
@@ -2347,6 +2377,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 863980865}
   m_Mesh: {fileID: -7647463442239531939, guid: e51acb7fe44709542ba72ab079a34a25, type: 3}
+--- !u!114 &863980872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 863980865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3a182cf704993b38b02154c8f6582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShow: 5
+  textToShow: 'To win keep this green signal device connected to the final device. '
 --- !u!1 &898157090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2393,6 +2437,7 @@ GameObject:
   - component: {fileID: 927877541}
   - component: {fileID: 927877540}
   - component: {fileID: 927877539}
+  - component: {fileID: 927877544}
   m_Layer: 9
   m_Name: emitter (1)
   m_TagString: Untagged
@@ -2512,6 +2557,21 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 927877537}
   m_Mesh: {fileID: -7647463442239531939, guid: e51acb7fe44709542ba72ab079a34a25, type: 3}
+--- !u!114 &927877544
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 927877537}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3a182cf704993b38b02154c8f6582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShow: 5
+  textToShow: Move the device emitting the bad signal away from the final device
+    to win
 --- !u!1 &979713822
 GameObject:
   m_ObjectHideFlags: 0

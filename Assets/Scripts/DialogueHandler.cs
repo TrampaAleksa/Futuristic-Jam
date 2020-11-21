@@ -17,6 +17,7 @@ public class DialogueHandler : MonoBehaviour
    {
       Instance = this;
       timedAction = gameObject.AddComponent<TimedAction>();
+      dialogueHolder.SetActive(true);
    }
 
    public void ShowDialogue(string text, float time)

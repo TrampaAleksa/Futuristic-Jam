@@ -28,9 +28,13 @@ public class SpawnPickUps : MonoBehaviour
     public string tag3;
     public string tag4;
     public string tag5;
- 
+
+    public static SpawnPickUps Instance;
+    
     private void Awake()
     {
+        Instance = this;
+        
         takenPlaces = new List<int>();
         placeHolders = new List<GameObject>();
         placeHolders.Add(placeholder0);

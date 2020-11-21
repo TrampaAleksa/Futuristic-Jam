@@ -87,6 +87,7 @@ public class Player : MonoBehaviour {
             SpawnPickUps.DestroyFromPlayer(help.gameObject);
             pickUpPower.Play();
             Debug.Log("power up: " + other.tag);
+            SpawnPickUps.Instance.tags.RemoveAll((tag) =>tag == "teleport+");
 
         }else
         if(other.gameObject.CompareTag("teleport-"))

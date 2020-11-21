@@ -6,31 +6,32 @@ using UnityEngine.UI;
 
 public class DialogueHandler : MonoBehaviour
 {
-   public Text dialogue;
-   public GameObject dialogueHolder;
+    public Text dialogue;
+    public GameObject dialogueHolder;
+    public bool showOnStart = true;
 
-   public static DialogueHandler Instance;
-   private TimedAction timedAction;
+    public static DialogueHandler Instance;
+    private TimedAction timedAction;
 
 
-   private void Awake()
-   {
-      Instance = this;
-      timedAction = gameObject.AddComponent<TimedAction>();
-      dialogueHolder.SetActive(true);
-   }
+    private void Awake()
+    {
+        Instance = this;
+        timedAction = gameObject.AddComponent<TimedAction>();
+        if (showOnStart)
+            dialogueHolder.SetActive(true);
+    }
 
-   public void ShowDialogue(string text, float time)
-   {
-      dialogue.text = text;
-      dialogueHolder.SetActive(true);
-      timedAction.StartTimedAction(() => dialogueHolder.SetActive(false), time);
-   }
+    public void ShowDialogue(string text, float time)
+    {
+        dialogue.text = text;
+        dialogueHolder.SetActive(true);
+        timedAction.StartTimedAction(() => dialogueHolder.SetActive(false), time);
+    }
 
-   public void ShowDialogue(string text)
-   {
-      dialogue.text = text;
-      dialogueHolder.SetActive(true);
-   }
-   
+    public void ShowDialogue(string text)
+    {
+        dialogue.text = text;
+        dialogueHolder.SetActive(true);
+    }
 }

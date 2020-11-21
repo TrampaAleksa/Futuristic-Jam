@@ -763,6 +763,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213180676807051631, guid: df01b413351dabf4589e196ae183dc86, type: 3}
+      propertyPath: m_Text
+      value: Prevent the enemy from building up walls around devices by stepping
+        on him.
+      objectReference: {fileID: 0}
     - target: {fileID: 7362172798828894354, guid: df01b413351dabf4589e196ae183dc86, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0.00024414062
@@ -2237,7 +2242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.476
+      value: 30.091
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.z

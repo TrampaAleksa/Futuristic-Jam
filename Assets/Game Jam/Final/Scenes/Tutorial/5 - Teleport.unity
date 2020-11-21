@@ -589,6 +589,21 @@ CapsuleCollider:
   m_Height: 3.13
   m_Direction: 2
   m_Center: {x: -0.13479495, y: -0.008204222, z: -1.0308913}
+--- !u!114 &63191286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 63191281}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dbe3a182cf704993b38b02154c8f6582, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  timeToShow: 5
+  textToShow: Well done. Now finish the level
+  disableOnTrigger: 1
 --- !u!1 &63805985
 GameObject:
   m_ObjectHideFlags: 0
@@ -1478,6 +1493,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 213180676807051631, guid: df01b413351dabf4589e196ae183dc86, type: 3}
+      propertyPath: m_Text
+      value: Use the teleport by pressing E to win this level.
+      objectReference: {fileID: 0}
     - target: {fileID: 9011847893700676009, guid: df01b413351dabf4589e196ae183dc86, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2415,7 +2434,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.476
+      value: 30.091
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.z

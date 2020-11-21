@@ -1851,7 +1851,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.476
+      value: 30.091
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3573,6 +3573,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToShow: 3
   textToShow: Stand for a few seconds until the wall gets low enough.
+  disableOnTrigger: 0
 --- !u!1 &1579583027
 GameObject:
   m_ObjectHideFlags: 0

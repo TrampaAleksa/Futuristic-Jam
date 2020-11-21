@@ -1467,6 +1467,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToShow: 5
   textToShow: The purple devices can't be picked up
+  disableOnTrigger: 0
 --- !u!65 &503421656
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1939,7 +1940,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 30.476
+      value: 30.091
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 06497e16f132aea469586ba6065ea615, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2391,6 +2392,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   timeToShow: 5
   textToShow: 'To win keep this green signal device connected to the final device. '
+  disableOnTrigger: 0
 --- !u!1 &898157090
 GameObject:
   m_ObjectHideFlags: 0
@@ -2572,6 +2574,7 @@ MonoBehaviour:
   timeToShow: 5
   textToShow: Move the device emitting the bad signal away from the final device
     to win
+  disableOnTrigger: 0
 --- !u!1 &979713822
 GameObject:
   m_ObjectHideFlags: 0

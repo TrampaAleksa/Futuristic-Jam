@@ -4,6 +4,7 @@ public class DialogueCollisionTrigger : MonoBehaviour
 {
     public float timeToShow;
     public string textToShow;
+    public bool disableOnTrigger;
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
@@ -15,6 +16,11 @@ public class DialogueCollisionTrigger : MonoBehaviour
             else
             {
                 DialogueHandler.Instance.ShowDialogue(textToShow);
+            }
+
+            if (disableOnTrigger)
+            {
+                Destroy(this);
             }
         }
     }

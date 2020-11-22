@@ -19,7 +19,7 @@ public class Player : MonoBehaviour {
     {
         teleports = GameObject.FindObjectsOfType<Teleport>();
         rb = GetComponent<Rigidbody>();
-        timer = GetComponent<Timer>();
+        timer = GetComponentInChildren<Timer>();
     }
     private void FixedUpdate()
     {

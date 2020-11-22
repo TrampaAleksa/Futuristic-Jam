@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Game Jam/Final/Scenes/Final Scene.unity
     guid: 34e8d82728bb9264bb8b64baa443c4e0
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Scene 2.unity
+    guid: fb0b472a7ab7aa0488fdbc7c8cd79c3e
+  - enabled: 1
+    path: Assets/Game Jam/Final/Scenes/Scene 3.unity
+    guid: ef030fe7b30758d40bd6218b8df8337a
   m_configObjects: {}

@@ -53,6 +53,7 @@ public class SFinalDevice : MonoBehaviour
         
         if (numberOfGood != 0 && numberOfBad <=0)
         {
+            LevelChanger.Instance.RoundFinished();
             PauseMenu.Instance.CallNextLevel();
         }
 

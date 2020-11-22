@@ -22,7 +22,7 @@ public class Timer : MonoBehaviour
         EnergyBarController.Instance.SetTime(currentTime);
         if (currentTime <= 0)
         {
-            PauseMenu.Instance.TryAgain();
+            PauseMenu.Instance.ActivateTryAgainMenu(true);
         }
     }
 }

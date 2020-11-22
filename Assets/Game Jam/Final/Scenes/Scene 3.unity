@@ -991,7 +991,7 @@ GameObject:
   - component: {fileID: 191222830}
   - component: {fileID: 191222829}
   m_Layer: 9
-  m_Name: emitter (6)
+  m_Name: emitter (6) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1994,12 +1994,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4173343174090075418, guid: c706830bc5807bf48a2b527bf0dd5a70, type: 3}
-  minSecondsBetweenSpawning: 3
-  maxSecondsBetweenSpawning: 6
+  minSecondsBetweenSpawning: 30
+  maxSecondsBetweenSpawning: 60
   firstSpawn: {fileID: 553010729}
   secondSpawn: {fileID: 553010729}
   thirdSpawn: {fileID: 553010729}
-  maxEnemies: 4
+  maxEnemies: 0
 --- !u!1 &359141462
 GameObject:
   m_ObjectHideFlags: 0
@@ -4864,7 +4864,7 @@ GameObject:
   - component: {fileID: 1303566457}
   - component: {fileID: 1303566456}
   m_Layer: 9
-  m_Name: emitter (1)
+  m_Name: emitter (1) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5394,7 +5394,7 @@ GameObject:
   - component: {fileID: 1452031359}
   - component: {fileID: 1452031358}
   m_Layer: 9
-  m_Name: emitter (3)
+  m_Name: emitter (3) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5525,7 +5525,7 @@ GameObject:
   - component: {fileID: 1482678213}
   - component: {fileID: 1482678212}
   m_Layer: 9
-  m_Name: fixed Emitter
+  m_Name: fixed Emitter 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5669,7 +5669,7 @@ GameObject:
   - component: {fileID: 1499304026}
   - component: {fileID: 1499304029}
   m_Layer: 9
-  m_Name: fixed Emitter (3)
+  m_Name: fixed Emitter (3) 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6462,7 +6462,7 @@ GameObject:
   - component: {fileID: 2071691879}
   - component: {fileID: 2071691878}
   m_Layer: 9
-  m_Name: fixed Emitter (1)
+  m_Name: fixed Emitter (1) 1
   m_TagString: DeviceInPlace
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

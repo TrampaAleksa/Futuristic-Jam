@@ -24,13 +24,13 @@ public class Player : MonoBehaviour {
     private void FixedUpdate()
     {
         if (Input.GetAxis("Vertical") != 0)
-            rb.MovePosition(transform.position + transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime);
+            rb.MovePosition(transform.position + transform.forward * (Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime));
     }
     void Update()
     {
         if (Input.GetAxis("Horizontal") != 0)
         {
-            transform.Rotate(0, rotationSpeed * Input.GetAxis("Horizontal"), 0);
+            transform.Rotate(0, rotationSpeed * 20f * Input.GetAxis("Horizontal") * Time.deltaTime, 0);
         }
     }
 

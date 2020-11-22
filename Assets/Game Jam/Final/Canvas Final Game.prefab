@@ -299,6 +299,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dialogue: {fileID: 213180676807051631}
   dialogueHolder: {fileID: 5478579350347456142}
+  showOnStart: 1
 --- !u!1 &375323286782676182
 GameObject:
   m_ObjectHideFlags: 0
@@ -2058,7 +2059,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4560656276387113692}
   - component: {fileID: 4560656276387113694}
-  - component: {fileID: 4560656276387113681}
   m_Layer: 5
   m_Name: NameOfMenu
   m_TagString: Untagged
@@ -2093,22 +2093,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4560656276387113693}
   m_CullTransparentMesh: 0
---- !u!114 &4560656276387113681
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4560656276387113693}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eca24e87047de9b4ea7c2a5e25aa5c0a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nextLevel: {fileID: 0}
-  playAgain: {fileID: 0}
-  tryAgain: {fileID: 0}
-  pauseMenuUi: {fileID: 0}
 --- !u!1 &4560884595398885138
 GameObject:
   m_ObjectHideFlags: 0

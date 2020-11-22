@@ -72,7 +72,7 @@ public class PauseMenu : MonoBehaviour
             ActivateNextMenu(true);
         }
     }
-    void ToggleMenu(bool isActive, GameObject gameObject)
+    public void ToggleMenu(bool isActive, GameObject gameObject)
     {
         gameObject.SetActive(isActive);
         if (isActive)

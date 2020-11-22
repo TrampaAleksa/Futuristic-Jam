@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4220012184232770080}
   m_Layer: 0
   m_Name: Package
-  m_TagString: teleport+
+  m_TagString: ms+
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

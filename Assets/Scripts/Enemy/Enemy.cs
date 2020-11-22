@@ -60,6 +60,7 @@ public class Enemy : MonoBehaviour
         if (destination != null)
         {
             Vector3 targerVector = destination.position;
+            transform.LookAt(targerVector);
             navMeshAGent.SetDestination(targerVector);
         }    
     }

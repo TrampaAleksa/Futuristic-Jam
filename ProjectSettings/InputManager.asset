@@ -57,10 +57,10 @@ InputManager:
     m_Name: Fire2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: q
-    positiveButton: e
+    negativeButton: 
+    positiveButton: 
     altNegativeButton: 
-    altPositiveButton: 
+    altPositiveButton: mouse 1
     gravity: 1000
     dead: 0.001
     sensitivity: 1000

@@ -2655,8 +2655,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pickUpPower: {fileID: 624161555}
-  moveSpeed: 3
-  rotationSpeed: 1
+  moveSpeed: 4
+  rotationSpeed: 5
   bonusMoveSpeed: 1
   bonusTime: 5
   speedOfRotation: 5

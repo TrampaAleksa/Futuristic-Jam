@@ -55,7 +55,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 427659d72c25ddd4a8604dfb9b5d4b4a, type: 3}
+        m_Texture: {fileID: 2800000, guid: daabcb75cb59088439552ba654907878, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _CoatMaskMap:
@@ -91,7 +91,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 22bce02e44ed7974aa2c7f9628bf0781, type: 3}
+        m_Texture: {fileID: 2800000, guid: 47f61708a30fa114eb67a88b0ff9e167, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MaskMap:
@@ -99,7 +99,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
-        m_Texture: {fileID: 2800000, guid: 3c7b0ab0e2aac3a4db80d2099d1525c3, type: 3}
+        m_Texture: {fileID: 2800000, guid: 7349b70eeeb3f6145a6d10a7cfc5723a, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _NormalMap:
@@ -261,8 +261,8 @@ Material:
     - _UseEmissiveIntensity: 0
     - _UseEmissiveMap: 0
     - _UseMetallicMap: 1
-    - _UseNormalMap: 0
-    - _UseRoughnessMap: 1
+    - _UseNormalMap: 1
+    - _UseRoughnessMap: 0
     - _UseShadowThreshold: 0
     - _ZTestDepthEqualForOpaque: 3
     - _ZTestGBuffer: 4

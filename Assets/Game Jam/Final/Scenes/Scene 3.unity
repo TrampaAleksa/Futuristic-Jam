@@ -1994,8 +1994,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnPrefab: {fileID: 4173343174090075418, guid: c706830bc5807bf48a2b527bf0dd5a70, type: 3}
-  minSecondsBetweenSpawning: 45
-  maxSecondsBetweenSpawning: 60
+  minSecondsBetweenSpawning: 15
+  maxSecondsBetweenSpawning: 25
   firstSpawn: {fileID: 1708716906}
   secondSpawn: {fileID: 22142344}
   thirdSpawn: {fileID: 553010729}
@@ -2191,7 +2191,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8983767797884694478, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -1.78
+      value: -1.73
       objectReference: {fileID: 0}
     - target: {fileID: 8983767797884694478, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2199,7 +2199,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8983767797884694478, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -18.07
+      value: -17.1
       objectReference: {fileID: 0}
     - target: {fileID: 8983767797884694478, guid: 714e288cbdc0ad94c902e5a2b6cc0aad, type: 3}
       propertyPath: m_LocalRotation.x
@@ -5369,7 +5369,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2016067963009793516, guid: 57b415939ad8cda449e956ead06b8fb5, type: 3}
       propertyPath: startingTime
-      value: 255
+      value: 155
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 57b415939ad8cda449e956ead06b8fb5, type: 3}

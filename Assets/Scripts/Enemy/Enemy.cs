@@ -6,6 +6,7 @@ using UnityEngine.AI;
 
 public class Enemy : MonoBehaviour
 {
+    public AudioSource killSound;
     Transform destination;
     //[SerializeField] float speed = 2f;
     public GameObject target;
@@ -126,6 +127,7 @@ public class Enemy : MonoBehaviour
         animatior.SetBool("IsDestroy", true);
         boxCollider.enabled = false;
         timer.StartTimedAction(DestroyCrab, 2.9f);
-        enemy.enabled = false;   
+        enemy.enabled = false;
+        killSound.Play();
     }
 }

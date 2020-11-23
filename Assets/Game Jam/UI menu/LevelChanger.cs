@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class LevelChanger : MonoBehaviour
 {
+    public AudioSource background;
     public int indexOfMaxLastLevel;
     public static int lastLevel;
     public static LevelChanger Instance;
@@ -12,7 +13,10 @@ public class LevelChanger : MonoBehaviour
     private void Awake()
     {
         if (Instance == null)
+        {
             Instance = this;
+            background.Play();
+        }
         DontDestroyOnLoad(gameObject);
     }
     private void OnLevelWasLoaded(int level)

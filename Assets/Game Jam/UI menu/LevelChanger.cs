@@ -25,7 +25,12 @@ public class LevelChanger : MonoBehaviour
 
     public void RoundFinished()
     {
-        OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex + 1);
+        if(SceneManager.GetActiveScene().buildIndex>=SceneManager.sceneCountInBuildSettings)
+            OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex);
+        else
+        {
+            OnLevelWasLoaded(SceneManager.GetActiveScene().buildIndex + 1);
+        }
     }
 
     public int GetIndexOfLevel()
